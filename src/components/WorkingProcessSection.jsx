@@ -4,33 +4,33 @@ import { Briefcase, FileSearch, Users, UserCheck } from 'lucide-react';
 const RECRUITMENT_STEPS = [
   {
     step: 'Step 01',
-    title: 'Identifying The Needs',
+    title: 'Smart Search & Need Analysis',
     description:
-      'Align with business leaders to scope role expectations, culture fit, and mandate priorities.',
+      'Execute comprehensive requirement mapping, organizational alignment, and role-specific competency scoping.',
     icon: Briefcase,
     offsetClass: 'lg:mt-44',
   },
   {
     step: 'Step 02',
-    title: 'Preparing A Job Description',
+    title: 'Market Intelligence & Role Scoping',
     description:
-      'Structure competency frameworks, market compensation benchmarks, and search strategy.',
+      'Benchmark leadership availability across target MNCs, corporate houses, and global markets with detailed market reports.',
     icon: FileSearch,
     offsetClass: 'lg:mt-28',
   },
   {
     step: 'Step 03',
-    title: 'Find A Talented Candidate',
+    title: 'Competency & Psychometric Assessment',
     description:
-      'Leverage PAN-India & global headhunting networks to source high-caliber executive talent.',
+      'Evaluate talent through competency-based interviews, deep industry rigor, and leadership questionnaires.',
     icon: Users,
     offsetClass: 'lg:mt-14',
   },
   {
     step: 'Step 04',
-    title: 'Screening And Shortlisting',
+    title: 'Risk Mitigation & Onboarding',
     description:
-      'Deliver vetted shortlists through structured behavioral assessments and advisory support.',
+      'Lower attrition risk with structured reference checks, strategic offer negotiation, and formal induction support.',
     icon: UserCheck,
     offsetClass: 'lg:mt-0',
   },
@@ -42,7 +42,7 @@ export default function WorkingProcessSection() {
   return (
     <section
       id="process"
-      className="relative py-20 sm:py-24 bg-gradient-to-br from-[#0C2544] via-[#133661] to-[#1A4A80] text-white overflow-hidden"
+      className="relative py-14 sm:py-20 lg:py-24 bg-gradient-to-br from-[#0C2544] via-[#133661] to-[#1A4A80] text-white overflow-hidden"
     >
       {/* Subtle Ambient Blue Glow */}
       <div className="pointer-events-none absolute -top-24 right-1/4 w-96 h-96 rounded-full bg-[#337AB7]/25 blur-3xl" />
@@ -59,11 +59,11 @@ export default function WorkingProcessSection() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top-Left Header matching reference */}
-        <div className="max-w-xl space-y-2.5 mb-12 lg:mb-6">
+        <div className="max-w-xl space-y-2.5 mb-8 sm:mb-12 lg:mb-6">
           <p className="text-xs font-bold uppercase tracking-widest text-sky-300">
             / How It Works /
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-white tracking-tight leading-[1.15]">
+          <h2 className="text-2xl sm:text-4xl lg:text-[42px] font-extrabold text-white tracking-tight leading-[1.18]">
             <span className="text-sky-400">Steps</span> of Recruitment
             <br />
             Process
@@ -87,8 +87,8 @@ export default function WorkingProcessSection() {
             />
           </svg>
 
-          {/* 4 Ascending Staircase Columns */}
-          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 items-start">
+          {/* 4 Ascending Staircase Columns (Clean Frosted Cards on Mobile/Tablet, Open Staircase on lg+) */}
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-start">
             {RECRUITMENT_STEPS.map((item, idx) => {
               const Icon = item.icon;
               const isActive = idx === activeIndex;
@@ -100,7 +100,7 @@ export default function WorkingProcessSection() {
                   onClick={() => setActiveIndex(idx)}
                   onMouseEnter={() => setActiveIndex(idx)}
                   aria-pressed={isActive}
-                  className={`group flex flex-col items-center text-center px-3 focus:outline-none cursor-pointer transition-transform duration-300 ${item.offsetClass}`}
+                  className={`group flex flex-col items-center text-center rounded-2xl bg-white/[0.07] border border-white/15 p-5 sm:p-6 lg:rounded-none lg:bg-transparent lg:border-0 lg:px-3 lg:py-0 focus:outline-none cursor-pointer transition-all duration-300 ${item.offsetClass}`}
                 >
                   {/* Icon / Active #337AB7 Circle */}
                   <div

@@ -13,11 +13,11 @@ const QUICK_LINKS = [
 ];
 
 const PROGRAMS = [
-  { label: 'AVY Kochhar Academy', href: '#faqs' },
-  { label: 'Coaching & Transformation', href: '#faqs' },
-  { label: 'Train The Trainer', href: '#faqs' },
-  { label: 'Top Sales Programs', href: '#faqs' },
-  { label: 'Softskills Programs', href: '#faqs' },
+  { label: 'AVY Kochhar Academy', href: '#top-programs' },
+  { label: 'Coaching & Transformation', href: '#top-programs' },
+  { label: 'Train The Trainer', href: '#top-programs' },
+  { label: 'Top Sales Programs', href: '#top-programs' },
+  { label: 'Softskills Programs', href: '#top-programs' },
 ];
 
 export default function Footer() {
@@ -25,10 +25,10 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#0C2544] text-slate-300 border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="grid grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10">
           {/* Column 1: QUICK LINKS */}
-          <div className="lg:col-span-3">
+          <div className="col-span-1 lg:col-span-3">
             <h3 className="text-xs font-bold uppercase tracking-widest text-white pb-3 mb-4 border-b border-white/15">
               Quick Links
             </h3>
@@ -47,7 +47,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2: PROGRAMS */}
-          <div className="lg:col-span-3">
+          <div className="col-span-1 lg:col-span-3">
             <h3 className="text-xs font-bold uppercase tracking-widest text-white pb-3 mb-4 border-b border-white/15">
               Programs
             </h3>
@@ -66,7 +66,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3: INTERNATIONAL BUSINESS ADVANTAGE */}
-          <div className="lg:col-span-3 space-y-5">
+          <div className="col-span-2 sm:col-span-1 lg:col-span-3 space-y-5">
             <h3 className="text-xs font-bold uppercase tracking-widest text-white pb-3 border-b border-white/15">
               International Business Advantage
             </h3>
@@ -109,7 +109,7 @@ export default function Footer() {
           </div>
 
           {/* Column 4: GET YOUR MEMBERSHIP */}
-          <div className="lg:col-span-3">
+          <div className="col-span-2 sm:col-span-1 lg:col-span-3">
             <h3 className="text-xs font-bold uppercase tracking-widest text-white pb-3 mb-4 border-b border-white/15">
               Get Your Membership
             </h3>

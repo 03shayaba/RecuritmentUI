@@ -294,7 +294,7 @@ function LogoMarqueeRow({ logos, direction = 'left' }) {
   return (
     <div className="relative overflow-hidden py-1.5">
       <div
-        className={`flex w-max gap-5 sm:gap-6 hover:[animation-play-state:paused] ${
+        className={`flex w-max gap-3.5 sm:gap-6 hover:[animation-play-state:paused] ${
           direction === 'left' ? 'animate-marquee-left' : 'animate-marquee-right'
         }`}
       >
@@ -302,7 +302,7 @@ function LogoMarqueeRow({ logos, direction = 'left' }) {
           <div
             key={`${brand.name}-${idx}`}
             title={brand.name}
-            className="w-44 sm:w-48 h-24 rounded-xl border border-slate-200/90 bg-white px-4 flex items-center justify-center shadow-xs hover:shadow-md hover:border-[#337AB7]/45 transition-all duration-300 shrink-0"
+            className="w-36 sm:w-48 h-20 sm:h-24 rounded-xl border border-slate-200/90 bg-white px-3 sm:px-4 flex items-center justify-center shadow-xs hover:shadow-md hover:border-[#337AB7]/45 transition-all duration-300 shrink-0"
           >
             {brand.render()}
           </div>
@@ -316,16 +316,16 @@ export default function TopEmployersSlider() {
   return (
     <section
       id="employers"
-      className="py-16 sm:py-20 bg-white border-y border-slate-200/80 overflow-hidden"
+      className="py-14 sm:py-20 bg-white border-y border-slate-200/80 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center space-y-2.5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-10 text-center space-y-2.5">
         <p className="text-xs font-bold uppercase tracking-widest text-[#337AB7]">
           / Our Clients &amp; Partners /
         </p>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0C2544] tracking-tight uppercase">
+        <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0C2544] tracking-tight uppercase">
           Top <span className="text-[#337AB7]">Employers</span>
         </h2>
-        <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
+        <p className="text-xs sm:text-base text-slate-600 max-w-2xl mx-auto">
           Trusted by Fortune 500 MNCs, Indian conglomerates, and high-growth industry
           leaders across sectors.
         </p>
@@ -333,10 +333,10 @@ export default function TopEmployersSlider() {
 
       {/* Full-Width Dual-Row Continuous Slider with Edge Fades */}
       <div className="relative max-w-[1440px] mx-auto">
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-28 z-10 bg-gradient-to-r from-white via-white/85 to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-28 z-10 bg-gradient-to-l from-white via-white/85 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-8 sm:w-28 z-10 bg-gradient-to-r from-white via-white/85 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-8 sm:w-28 z-10 bg-gradient-to-l from-white via-white/85 to-transparent" />
 
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           <LogoMarqueeRow logos={ROW_ONE_LOGOS} direction="left" />
           <LogoMarqueeRow logos={ROW_TWO_LOGOS} direction="right" />
         </div>

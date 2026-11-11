@@ -43,10 +43,10 @@ export default function AwardWinningSection() {
   }, [modalMode]);
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-[#EDF4FB]/85 border-y border-[#337AB7]/15">
+    <section className="py-14 sm:py-20 lg:py-24 bg-[#EDF4FB]/85 border-y border-[#337AB7]/15">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Heading matching reference layout */}
-        <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight text-[#0C2544] leading-[1.2] mb-10 sm:mb-12">
+        <h2 className="text-2xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight text-[#0C2544] leading-[1.2] mb-8 sm:mb-12">
           Welcome to an{' '}
           <span className="text-[#337AB7]">Award Winning</span>
           <br className="hidden sm:inline" /> Recruitment &amp; Consulting Agency
@@ -57,20 +57,19 @@ export default function AwardWinningSection() {
           {/* Column 1 */}
           <div className="lg:col-span-3 flex flex-col justify-center">
             <p className="text-sm sm:text-[15px] leading-7 text-slate-600">
-              For over two decades, International Business Advantage (IBA Consulting
-              Worldwide) has partnered with leading multinational corporations, blue-chip
-              enterprises, and agile growth firms to connect visionary leadership with
-              high-impact business opportunities across India and global markets.
+              Based in Gurgaon with a PAN-India and overseas footprint, IBA partners with
+              Multinational Corporations, Blue-Chip Enterprises, Large Corporate Houses,
+              and Family-Owned Businesses to turn manpower into a decisive competitive edge
+              and position every client as an Employer of Choice.
             </p>
           </div>
 
           {/* Column 2 */}
           <div className="lg:col-span-3 flex flex-col justify-center">
             <p className="text-sm sm:text-[15px] leading-7 text-slate-600">
-              Whether you are an ambitious professional ready for your next career
-              milestone or an enterprise scaling specialized teams, our Gurgaon-led search
-              practice delivers precision matching, confidential advisory, and tailored
-              talent guidance at every stage.
+              Whether placing C-Suite leaders (MD, CEO, CFO, CHRO, CMO, CIO/CTO),
+              transforming HR structures, or empowering professionals through AVY Kochhar
+              Academy, we align leadership vision with focused execution at every level.
             </p>
           </div>
 
@@ -81,7 +80,7 @@ export default function AwardWinningSection() {
                 key={card.id}
                 type="button"
                 onClick={() => openModal(card.id)}
-                className="group relative aspect-[4/3] sm:aspect-square w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-100 text-left shadow-sm hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#337AB7]"
+                className="group relative aspect-[16/10] sm:aspect-square w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-100 text-left shadow-sm hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#337AB7]"
               >
                 <img
                   src={card.image}
@@ -109,7 +108,7 @@ export default function AwardWinningSection() {
           role="dialog"
           aria-modal="true"
         >
-          <div className="relative w-full max-w-lg rounded-2xl bg-white p-6 sm:p-8 shadow-2xl border border-slate-200">
+          <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl bg-white p-5 sm:p-8 shadow-2xl border border-slate-200">
             <button
               type="button"
               onClick={closeModal}

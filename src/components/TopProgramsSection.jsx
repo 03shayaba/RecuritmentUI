@@ -21,28 +21,28 @@ export default function TopProgramsSection() {
   return (
     <section
       id="top-programs"
-      className="py-20 sm:py-24 bg-gradient-to-b from-white via-[#F5F9FE] to-white"
+      className="py-14 sm:py-20 lg:py-24 bg-gradient-to-b from-white via-[#F5F9FE] to-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-2.5 mb-10">
+        <div className="text-center max-w-3xl mx-auto space-y-2.5 mb-8 sm:mb-10">
           <p className="text-xs font-bold uppercase tracking-widest text-[#337AB7]">
             / AVY Kochhar Academy /
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#0C2544] tracking-tight uppercase">
+          <h2 className="text-2xl sm:text-4xl lg:text-[42px] font-extrabold text-[#0C2544] tracking-tight uppercase">
             Top <span className="text-[#337AB7]">Program</span>
           </h2>
-          <p className="text-sm sm:text-base text-slate-600">
+          <p className="text-xs sm:text-base text-slate-600">
             Executive coaching, commercial sales enablement, soft skills, and campus
             readiness tracks built for measurable capability uplift.
           </p>
         </div>
 
-        {/* 4 Category Tabs matching reference */}
+        {/* 4 Category Tabs (2x2 Pill Grid on Mobile, Underlined Tabs on sm+) */}
         <div
           role="tablist"
           aria-label="Top training programs"
-          className="flex flex-wrap items-center justify-center gap-2 sm:gap-6 border-b border-slate-200 pb-0 mb-10 sm:mb-12"
+          className="grid grid-cols-2 sm:flex sm:flex-wrap sm:items-center sm:justify-center gap-2 sm:gap-6 sm:border-b sm:border-slate-200 pb-0 mb-8 sm:mb-12"
         >
           {TOP_PROGRAM_TABS.map((tab) => {
             const isActive = tab.id === activeTabId;
@@ -53,15 +53,15 @@ export default function TopProgramsSection() {
                 role="tab"
                 aria-selected={isActive}
                 onClick={() => setActiveTabId(tab.id)}
-                className={`relative px-3 sm:px-5 py-3.5 text-sm sm:text-[15px] font-bold transition-colors cursor-pointer whitespace-nowrap ${
+                className={`relative rounded-xl sm:rounded-none px-3 sm:px-5 py-2.5 sm:py-3.5 text-xs sm:text-[15px] font-bold transition-colors cursor-pointer text-center leading-snug ${
                   isActive
-                    ? 'text-[#337AB7]'
-                    : 'text-slate-600 hover:text-[#0C2544]'
+                    ? 'bg-[#0C2544] text-white sm:bg-transparent sm:text-[#337AB7]'
+                    : 'bg-[#EDF4FB] text-[#0C2544] hover:bg-[#DCEAF8] sm:bg-transparent sm:text-slate-600 sm:hover:bg-transparent sm:hover:text-[#0C2544]'
                 }`}
               >
                 {tab.label}
                 <span
-                  className={`absolute inset-x-0 -bottom-[1px] h-[3px] rounded-full transition-all duration-300 ${
+                  className={`hidden sm:block absolute inset-x-0 -bottom-[1px] h-[3px] rounded-full transition-all duration-300 ${
                     isActive ? 'bg-[#337AB7] scale-x-100' : 'bg-transparent scale-x-0'
                   }`}
                 />
@@ -71,7 +71,7 @@ export default function TopProgramsSection() {
         </div>
 
         {/* 3x2 Program Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
           {activeTab.programs.map((program) => (
             <button
               key={program.title}
@@ -82,7 +82,7 @@ export default function TopProgramsSection() {
               className="group rounded-xl border border-slate-200/90 bg-white overflow-hidden text-left shadow-sm hover:shadow-xl hover:border-[#337AB7]/45 transition-all duration-300 flex flex-col cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#337AB7]"
             >
               {/* Card Image */}
-              <div className="relative h-52 w-full overflow-hidden bg-slate-100">
+              <div className="relative h-44 sm:h-52 w-full overflow-hidden bg-slate-100">
                 <img
                   src={program.image}
                   alt={program.title}
@@ -118,7 +118,7 @@ export default function TopProgramsSection() {
           role="dialog"
           aria-modal="true"
         >
-          <div className="relative w-full max-w-lg rounded-2xl bg-white p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-5">
+          <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl bg-white p-5 sm:p-8 shadow-2xl border border-slate-200 space-y-5">
             <button
               type="button"
               onClick={() => setSelectedProgram(null)}

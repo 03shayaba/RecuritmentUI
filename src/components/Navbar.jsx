@@ -56,13 +56,13 @@ export default function Navbar() {
 
       {/* Main Navigation Row */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-[68px] gap-4">
+        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-[68px] gap-4">
           {/* Brand Logo */}
           <a href="#top" className="flex items-center gap-3 group shrink-0">
             <img
               src="/logo-web.png"
               alt="International Business Advantage (IBA Consulting Worldwide)"
-              className="h-11 sm:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.03]"
+              className="h-9 sm:h-11 lg:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.03]"
             />
           </a>
 
@@ -133,9 +133,22 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile & Tablet Drawer (All 12 Links Organized Cleanly) */}
+      {/* Mobile & Tablet Drawer (All Links Organized Cleanly) */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-slate-200 bg-white text-slate-800 px-4 py-4 max-h-[80vh] overflow-y-auto shadow-xl">
+        <div className="lg:hidden border-t border-slate-200 bg-white text-slate-800 px-4 py-4 max-h-[calc(100dvh-4rem)] overflow-y-auto shadow-xl">
+          <div className="mb-3 rounded-xl bg-[#0C2544] text-white px-3.5 py-2.5 flex flex-col gap-1 text-xs">
+            <span className="inline-flex items-center gap-1.5 font-semibold text-sky-200">
+              <Globe2 className="w-3.5 h-3.5 shrink-0" />
+              Gurgaon HQ • PAN-India &amp; Global Advisory
+            </span>
+            <a
+              href="mailto:info@ibaconsultingworldwide.com"
+              className="inline-flex items-center gap-1.5 text-white/90 hover:text-white break-all"
+            >
+              <Mail className="w-3.5 h-3.5 shrink-0" />
+              info@ibaconsultingworldwide.com
+            </a>
+          </div>
           <div className="space-y-1">
             {NAV_LINKS.map((item) =>
               item.children ? (

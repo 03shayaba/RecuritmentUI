@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import {
   ArrowLeft,
   ArrowRight,
@@ -13,60 +13,60 @@ import {
 
 const SERVICE_CARDS = [
   {
-    tag: '/ 01 recruitment',
-    title: 'Executive Search',
+    tag: '/ 01 executive search',
+    title: 'Executive Search & Recruitment',
     description:
-      'Precision leadership hiring, RPO partnerships, and campus drives for MNCs, blue-chip firms, and SMEs.',
+      'Managing searches from MDs and Board Directors to CEO, CFO, CHRO, CMO & senior management across global markets.',
     image: '/executive-search.jpg',
     icon: UserSearch,
     details: [
-      'C-Suite, VP & Senior Leadership Headhunting',
-      'Dedicated Recruitment Process Partnerships (RPO)',
-      'Structured Campus & Lateral Talent Acquisition',
-      'PAN-India & Overseas Talent Market Mapping',
+      'MD, Board Directors, CEO, CFO, CHRO & CMO Search',
+      'Executive Search Partners & Recruitment Partners',
+      'Campus Hiring Partners & Lateral Acquisition',
+      'Competency Interviews, Psychometrics & Risk Mitigation',
     ],
   },
   {
-    tag: '/ 02 strategy',
-    title: 'Business Consulting',
+    tag: '/ 02 business consulting',
+    title: 'Business & Marketing Consulting',
     description:
-      'Strategic marketing advisory, sales process innovation, and market expansion built for measurable growth.',
+      'Corporate marketing strategy, sales process optimization, distribution planning, and IT support consulting.',
     image: '/executive-leadership.jpg',
     icon: BarChart3,
     details: [
-      'Corporate Growth & Market Entry Analysis',
-      'Sales Process Structuring & Channel Expansion',
-      'Brand Positioning & Go-To-Market Advisory',
-      'IT Support & Operational Efficiency Consulting',
+      'Corporate Strategy & Business Market Analysis',
+      'Brand Positioning, Customer & Competitor Research',
+      'Sales Process Optimization & Distribution Planning',
+      'Change Management & IT Support Consulting',
     ],
   },
   {
-    tag: '/ 03 leadership',
-    title: 'AVY Kochhar Academy',
+    tag: '/ 03 avy kochhar academy',
+    title: 'Coaching & Training Solutions',
     description:
-      'Behavioral executive coaching, impact sales bootcamps, and Train-the-Trainer capability programs.',
+      'Behavioral executive coaching, leadership transition, impact sales training, soft skills, and university programs.',
     image: '/bottom-banner.jpg',
     icon: GraduationCap,
     details: [
-      'Leadership & Behavioral Executive Coaching',
-      'High-Impact B2B & Enterprise Sales Training',
-      'Train-the-Trainer Certification Tracks',
-      'University Employability & Soft Skills Programs',
+      'Leadership Coaching & Family Business Management 1 & 2',
+      'Impact Sales Training, Power Selling & Negotiation',
+      'Soft Skill Programs & Train the Trainer Certification',
+      'Digital Marketing & University Employability Tracks',
     ],
   },
   {
-    tag: '/ 04 hr advisory',
-    title: 'HR Transformation',
+    tag: '/ 04 hr consulting',
+    title: 'HR Consulting & Transformation',
     description:
-      'Manpower planning, organizational restructuring, and performance frameworks tailored for scale.',
+      'Workforce restructuring, manpower planning, PMS, 360-degree & culture surveys, and policy manuals.',
     image:
       'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=700&q=80',
     icon: Layers,
     details: [
-      'Manpower Planning & Org Restructuring',
-      'HR Policies, Handbooks & Governance',
-      'Performance Management Systems (PMS)',
-      '360-Degree Feedback & Culture Surveys',
+      'Workforce Restructuring & Organizational Design',
+      'Performance Management Systems & Reward Advisory',
+      'Career & Succession Planning & Competency Modeling',
+      '360-Degree & Culture Surveys, HR Audits & Handbooks',
     ],
   },
 ];
@@ -83,6 +83,7 @@ export default function ServicesSection() {
     return 1;
   });
   const [selectedService, setSelectedService] = useState(null);
+  const touchStartX = useRef(null);
 
   useEffect(() => {
     const updateCols = () => {
@@ -134,16 +135,16 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="py-20 sm:py-24 bg-gradient-to-b from-white via-[#F5F9FE] to-white"
+      className="py-14 sm:py-20 lg:py-24 bg-gradient-to-b from-white via-[#F5F9FE] to-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Row: Eyebrow + Title | Circular Prev/Next Buttons */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-12">
-          <div className="space-y-2.5">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-5 mb-8 sm:mb-12">
+          <div className="space-y-2">
             <p className="text-xs font-bold uppercase tracking-widest text-[#337AB7]">
               / Services /
             </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#0C2544] tracking-tight leading-[1.15]">
+            <h2 className="text-2xl sm:text-4xl lg:text-[42px] font-extrabold text-[#0C2544] tracking-tight leading-[1.18]">
               Innovative <span className="text-[#337AB7]">Solutions</span> for Talents
             </h2>
           </div>
@@ -168,8 +169,20 @@ export default function ServicesSection() {
           </div>
         </div>
 
-        {/* Smooth Sliding Cards Track */}
-        <div className="overflow-hidden -mx-3">
+        {/* Smooth Sliding Cards Track (supports touch swipe on mobile) */}
+        <div
+          className="overflow-hidden -mx-3 touch-pan-y"
+          onTouchStart={(e) => {
+            touchStartX.current = e.touches[0].clientX;
+          }}
+          onTouchEnd={(e) => {
+            if (touchStartX.current === null) return;
+            const diff = touchStartX.current - e.changedTouches[0].clientX;
+            if (diff > 45) nextSlide();
+            else if (diff < -45) prevSlide();
+            touchStartX.current = null;
+          }}
+        >
           <div
             onTransitionEnd={handleTransitionEnd}
             className={`flex ${
@@ -232,6 +245,26 @@ export default function ServicesSection() {
             })}
           </div>
         </div>
+        {/* Slide Indicator Dots for Mobile & Tablet */}
+        <div className="mt-6 flex items-center justify-center gap-2 lg:hidden">
+          {SERVICE_CARDS.map((service, idx) => {
+            const activeDot = slideIndex % SERVICE_CARDS.length === idx;
+            return (
+              <button
+                key={service.title}
+                type="button"
+                onClick={() => {
+                  setIsTransitioning(true);
+                  setSlideIndex(idx);
+                }}
+                aria-label={`Show ${service.title}`}
+                className={`h-2 rounded-full transition-all cursor-pointer ${
+                  activeDot ? 'w-7 bg-[#337AB7]' : 'w-2 bg-slate-300'
+                }`}
+              />
+            );
+          })}
+        </div>
       </div>
 
       {/* Service Detail Modal */}
@@ -241,7 +274,7 @@ export default function ServicesSection() {
           role="dialog"
           aria-modal="true"
         >
-          <div className="relative w-full max-w-lg rounded-2xl bg-white p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-5">
+          <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl bg-white p-5 sm:p-8 shadow-2xl border border-slate-200 space-y-5">
             <button
               type="button"
               onClick={() => setSelectedService(null)}

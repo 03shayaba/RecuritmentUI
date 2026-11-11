@@ -32,9 +32,9 @@ function CircularStat({ percent, labelTop, labelBottom, animate }) {
     circumference - (displayPercent / 100) * circumference;
 
   return (
-    <div className="flex items-center gap-4 sm:gap-5 justify-center sm:justify-start">
-      <div className="relative w-28 h-28 shrink-0 flex items-center justify-center">
-        <svg className="w-28 h-28 -rotate-90" viewBox="0 0 100 100" aria-hidden="true">
+    <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-5 text-center sm:text-left justify-center sm:justify-start">
+      <div className="relative w-20 h-20 sm:w-28 sm:h-28 shrink-0 flex items-center justify-center">
+        <svg className="w-20 h-20 sm:w-28 sm:h-28 -rotate-90" viewBox="0 0 100 100" aria-hidden="true">
           <circle
             cx="50"
             cy="50"
@@ -56,17 +56,17 @@ function CircularStat({ percent, labelTop, labelBottom, animate }) {
             strokeDashoffset={strokeDashoffset}
           />
         </svg>
-        <div className="absolute inset-3.5 rounded-full bg-white shadow-lg flex items-center justify-center">
-          <span className="text-xl sm:text-2xl font-extrabold text-[#337AB7] tracking-tight tabular-nums">
+        <div className="absolute inset-2.5 sm:inset-3.5 rounded-full bg-white shadow-lg flex items-center justify-center">
+          <span className="text-lg sm:text-2xl font-extrabold text-[#337AB7] tracking-tight tabular-nums">
             {displayPercent}
-            <span className="text-xs font-bold align-top ml-0.5">%</span>
+            <span className="text-[10px] sm:text-xs font-bold align-top ml-0.5">%</span>
           </span>
         </div>
       </div>
 
-      <div className="text-left leading-snug">
-        <p className="text-base sm:text-lg font-bold text-white">{labelTop}</p>
-        <p className="text-base sm:text-lg font-bold text-white/90">{labelBottom}</p>
+      <div className="leading-snug">
+        <p className="text-sm sm:text-lg font-bold text-white">{labelTop}</p>
+        <p className="text-sm sm:text-lg font-bold text-white/90">{labelBottom}</p>
       </div>
     </div>
   );
@@ -98,29 +98,29 @@ export default function FaqSection() {
   return (
     <section
       id="faqs"
-      className="relative py-24 sm:py-32 bg-gradient-to-br from-[#0C2544] via-[#13345D] to-[#1D4C80] text-white overflow-hidden"
+      className="relative py-14 sm:py-24 lg:py-32 bg-gradient-to-br from-[#0C2544] via-[#13345D] to-[#1D4C80] text-white overflow-hidden"
     >
       <div className="pointer-events-none absolute -top-24 left-1/3 w-96 h-96 rounded-full bg-[#337AB7]/25 blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Row: Image + Balanced 2-Line Heading | Numbered FAQ Accordion */}
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-start">
           {/* Left Column */}
-          <div className="lg:col-span-5 space-y-7">
+          <div className="lg:col-span-5 space-y-5 sm:space-y-7">
             <div className="overflow-hidden rounded-2xl border border-white/15 bg-white shadow-2xl">
               <img
                 src="/bottom-banner.jpg"
                 alt="IBA Consulting Worldwide team collaboration"
                 loading="lazy"
-                className="w-full h-64 sm:h-72 object-cover object-center"
+                className="w-full h-52 sm:h-72 object-cover object-center"
               />
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2.5 sm:space-y-3">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-sky-300">
                 / Why Choose Us? /
               </p>
-              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-white tracking-tight leading-[1.15]">
+              <h2 className="text-2xl sm:text-4xl lg:text-[42px] font-extrabold text-white tracking-tight leading-[1.18]">
                 Trusted Search &amp;
                 <br />
                 <span className="text-sky-300">HR Advisory Partner.</span>
@@ -129,7 +129,7 @@ export default function FaqSection() {
           </div>
 
           {/* Right Column: Numbered Accordion */}
-          <div className="lg:col-span-7 space-y-4">
+          <div className="lg:col-span-7 space-y-3 sm:space-y-4">
             {FAQS.map((faq, idx) => {
               const isOpen = openIndex === idx;
               return (
@@ -145,7 +145,7 @@ export default function FaqSection() {
                     type="button"
                     onClick={() => setOpenIndex(isOpen ? -1 : idx)}
                     aria-expanded={isOpen}
-                    className="w-full flex items-center justify-between gap-4 px-6 sm:px-7 py-5 sm:py-6 text-left cursor-pointer"
+                    className="w-full flex items-center justify-between gap-3 sm:gap-4 px-4 sm:px-7 py-4 sm:py-6 text-left cursor-pointer"
                   >
                     <span
                       className={`text-sm sm:text-base font-bold ${
@@ -169,7 +169,7 @@ export default function FaqSection() {
                   </button>
 
                   {isOpen && (
-                    <div className="px-6 sm:px-7 pb-6 text-sm sm:text-[15px] text-slate-600 leading-relaxed">
+                    <div className="px-4 sm:px-7 pb-5 sm:pb-6 text-xs sm:text-[15px] text-slate-600 leading-relaxed">
                       {faq.answer}
                     </div>
                   )}
@@ -180,12 +180,12 @@ export default function FaqSection() {
         </div>
 
         {/* Hairline Divider */}
-        <div className="my-16 sm:my-20 border-t border-white/15" />
+        <div className="my-12 sm:my-16 lg:my-20 border-t border-white/15" />
 
-        {/* Bottom Row: Animated Circular Progress Gauges */}
+        {/* Bottom Row: Animated Circular Progress Gauges (2x2 Grid on Mobile) */}
         <div
           ref={statsRef}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-10"
         >
           {CAPABILITY_STATS.map((stat) => (
             <CircularStat

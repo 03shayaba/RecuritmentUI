@@ -16,7 +16,7 @@ import ScrollToTop from '../components/ScrollToTop';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col bg-white text-slate-900">
+    <div className="min-h-screen flex flex-col bg-white text-slate-900 overflow-x-clip">
       <Navbar />
       <main className="flex-1">
         <Hero />

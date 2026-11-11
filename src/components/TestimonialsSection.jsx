@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { ArrowLeft, ArrowRight, Quote, Star } from 'lucide-react';
 import { TESTIMONIALS } from '../data/homeData';
 
@@ -10,6 +10,7 @@ export default function TestimonialsSection() {
   const [isTwoUp, setIsTwoUp] = useState(() =>
     typeof window !== 'undefined' ? window.innerWidth >= 768 : true
   );
+  const touchStartX = useRef(null);
 
   useEffect(() => {
     const media = window.matchMedia('(min-width: 768px)');
@@ -59,18 +60,18 @@ export default function TestimonialsSection() {
   return (
     <section
       id="testimonials"
-      className="py-20 sm:py-24 bg-gradient-to-b from-[#DCEAF8] via-[#EDF4FB] to-[#E4EFFA] border-y border-[#337AB7]/15"
+      className="py-14 sm:py-20 lg:py-24 bg-gradient-to-b from-[#DCEAF8] via-[#EDF4FB] to-[#E4EFFA] border-y border-[#337AB7]/15"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-12 gap-8 items-stretch">
+        <div className="grid lg:grid-cols-12 gap-7 sm:gap-8 items-stretch">
           {/* Left 8 Cols: Header + Arrows + Smooth Auto-Sliding Carousel */}
-          <div className="lg:col-span-8 flex flex-col justify-between space-y-8 min-w-0">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5">
-              <div className="space-y-2.5">
+          <div className="lg:col-span-8 flex flex-col justify-between space-y-6 sm:space-y-8 min-w-0">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-5">
+              <div className="space-y-2">
                 <p className="text-xs font-bold uppercase tracking-widest text-[#337AB7]">
                   / Our Clients /
                 </p>
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0C2544] tracking-tight leading-[1.18]">
+                <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0C2544] tracking-tight leading-[1.18]">
                   What <span className="text-[#337AB7]">clients say</span> about
                   <br className="hidden sm:inline" /> IBA Consulting Worldwide
                 </h2>
@@ -96,8 +97,20 @@ export default function TestimonialsSection() {
               </div>
             </div>
 
-            {/* Sliding Viewport */}
-            <div className="overflow-hidden -mx-3">
+            {/* Sliding Viewport (supports touch swipe on mobile) */}
+            <div
+              className="overflow-hidden -mx-3 touch-pan-y"
+              onTouchStart={(e) => {
+                touchStartX.current = e.touches[0].clientX;
+              }}
+              onTouchEnd={(e) => {
+                if (touchStartX.current === null) return;
+                const diff = touchStartX.current - e.changedTouches[0].clientX;
+                if (diff > 45) nextSlide();
+                else if (diff < -45) prevSlide();
+                touchStartX.current = null;
+              }}
+            >
               <div
                 onTransitionEnd={handleTransitionEnd}
                 className={`flex ${
@@ -171,7 +184,7 @@ export default function TestimonialsSection() {
 
           {/* Right 4 Cols: Tall Rating Highlight Card */}
           <div className="lg:col-span-4">
-            <div className="relative h-full min-h-[340px] rounded-2xl overflow-hidden shadow-xl border border-[#337AB7]/20 bg-[#337AB7] text-white flex flex-col justify-end">
+            <div className="relative h-full min-h-[260px] sm:min-h-[340px] rounded-2xl overflow-hidden shadow-xl border border-[#337AB7]/20 bg-[#337AB7] text-white flex flex-col justify-end">
               <img
                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=700&q=80"
                 alt="Happy clients reviewing IBA Consulting results"

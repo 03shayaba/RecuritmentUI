@@ -207,70 +207,60 @@ export const WHY_IBA = [
 export const TESTIMONIALS = [
   {
     quote:
-      'IBA Consulting Worldwide transformed our regional leadership hiring. Their market mapping and executive search rigor helped us close three critical VP roles ahead of schedule.',
-    name: 'Rajeshwar Mehta',
-    role: 'VP Human Resources',
-    company: 'Leading Telecom Enterprise',
+      'I know Varun for the last 6 yrs. He is a passionate professional and brings commitment as a value to his deliveries. His leadership searches are marvelous and befitting to the requirements. His warmth, energy and dedication is what differentiates him from others. He believes in long term relationship building.',
+    name: 'Vinod Chaturvedi',
+    role: 'Ex Chief Operating Officer',
+    company: 'Airtel, Karnataka',
     tag: 'Executive Search',
     avatar:
       'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
   },
   {
     quote:
-      'Working with the IBA advisory team brought structure to our sales process and HR policies as we scaled from a family-run business into a PAN-India brand.',
-    name: 'Ananya Sharma',
-    role: 'Managing Director',
-    company: 'Meridian Consumer Goods',
-    tag: 'Business & HR Consulting',
-    avatar:
-      'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
-  },
-  {
-    quote:
-      'The behavioral leadership and impact sales programs delivered through AVY Kochhar Academy created an immediate, measurable lift in team confidence and quota attainment.',
-    name: 'Vikramaditya Kapoor',
-    role: 'Commercial Head',
-    company: 'Apex Industrial Solutions',
-    tag: 'Corporate Training',
+      'I have known Varun for almost 14 years now — a versatile Professional and a visionary Entrepreneur. IBA under his able leadership has grown multi folds and has carved out a niche position for itself in the Talent and Acquisition domain, creating a true differentiator for the industry.',
+    name: 'Sharad Khanna',
+    role: 'Sales Head FTTH',
+    company: 'Shyam Spectra Pvt Ltd',
+    tag: 'Talent Acquisition',
     avatar:
       'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
   },
   {
     quote:
-      'From campus recruitment drives to senior HR restructuring, IBA’s Gurgaon practice acts as a true strategic extension of our leadership team.',
-    name: 'Meenakshi Iyer',
-    role: 'Chief People Officer',
-    company: 'FinEdge Technologies',
-    tag: 'HR Transformation',
+      'Ever since I met Varun, I realized here is someone who is so competent yet very modest and humane; very passionate yet very focused; very professional yet very personal in providing solutions to the agenda in hand. He walks the talk and is master of his trade.',
+    name: 'Dr. Amarjeet Malhotra',
+    role: 'Dean & Professor of Accounting',
+    company: 'Ansal University, Gurgaon',
+    tag: 'Leadership & Advisory',
     avatar:
-      'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80',
+      'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80',
   },
 ];
 
 export const FAQS = [
   {
     num: '01.',
-    question: 'What does IBA’s Search & HR Advisory cover?',
+    question: 'What does IBA’s Executive Search & Recruitment cover?',
     answer:
-      'It encompasses executive search, employer branding, talent selection, onboarding, HR policies, workforce structuring, performance management, and organizational culture.',
+      'We manage end-to-end search assignments from Managing Directors, Board Directors, CEO, CFO, CHRO, CMO, and CIO/CTO roles to senior management through Executive Search Partners, Recruitment Partners, and Campus Hiring Partners.',
   },
   {
     num: '02.',
-    question: 'How does IBA conduct a training-needs analysis?',
+    question: 'How does IBA assess candidates and mitigate hiring risk?',
     answer:
-      'Our advisors combine stakeholder interviews, competency gap diagnostics, and 360-degree surveys to design high-impact coaching and capability roadmaps.',
+      'Our methodology combines Smart Search & Need Analysis, role-specific competency evaluation, deep-dive industry intelligence, psychometric leadership questionnaires, reference checks, and attrition-risk mitigation.',
   },
   {
     num: '03.',
-    question: 'Do you offer on-site corporate & HR training as well?',
+    question: 'What programs are offered under Coaching & Training Solutions?',
     answer:
-      'Yes. Through the AVY Kochhar Academy, we deliver on-site and hybrid leadership workshops, impact sales bootcamps, soft skills modules, and Train-the-Trainer certifications.',
+      'Through AVY Kochhar Academy, we deliver Leadership Coaching Solutions, Behavioural Executive Coaching, Family Business Management 1 & 2, Impact Sales Training, Soft Skill Programs, Train the Trainer, and University Programs.',
   },
   {
     num: '04.',
-    question: 'Do you offer advice and counsel on strategic HR & business issues?',
+    question: 'What is covered under Business & HR Consulting Transformation?',
     answer:
-      'Yes. With over 25 years of experience, our Gurgaon-based partners advise MNCs, SMEs, and family enterprises on growth strategy, restructuring, and HR transformation.',
+      'We advise MNCs, blue-chip corporations, SMEs, and family-owned businesses on corporate marketing strategy, distribution planning, workforce restructuring, manpower planning, PMS, 360-degree & culture surveys, and policy manuals.',
   },
 ];
 
@@ -290,47 +280,47 @@ export const TOP_PROGRAM_TABS = [
         title: 'BEHAVIOURAL EXECUTIVE COACHING',
         image: '/executive-leadership.jpg',
         summary:
-          'One-on-one behavioral transformation to strengthen executive presence, emotional intelligence, and decision clarity.',
-        audience: 'CXOs, Founders & Senior Directors',
+          'Building leaders who can lead — targeted behavioral executive coaching to sharpen leadership agility, self-awareness, and C-suite impact.',
+        audience: 'MDs, Board Directors, CEOs & Senior Management',
       },
       {
         title: 'FAMILY BUSINESS MANAGEMENT 1',
         image:
           'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=80',
         summary:
-          'Foundational governance, role clarity, and professionalized management systems for promoter-led enterprises.',
-        audience: 'Promoters & Next-Gen Business Leaders',
+          'Foundational governance, professionalized leadership systems, and vision alignment tailored for family-owned businesses.',
+        audience: 'Promoters & Next-Gen Family Business Leaders',
       },
       {
         title: 'FAMILY BUSINESS MANAGEMENT 2',
         image:
           'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80',
         summary:
-          'Succession planning, board alignment, and scalable growth execution across multi-generational family enterprises.',
+          'Succession planning, structural transformation, and multi-generational scale execution for established corporate houses.',
         audience: 'Managing Directors & Succession Cohorts',
       },
       {
         title: 'INSPIRING LEADERSHIP',
         image: '/executive-search.jpg',
         summary:
-          'Values-driven leadership workshops designed to elevate vision communication, trust, and cross-functional ownership.',
-        audience: 'Business Unit Heads & Senior Managers',
+          'Don’t manage — LEAD! Empower leaders to inspire ambition, initiative, and high-trust ownership across teams.',
+        audience: 'Business Unit Heads & Senior Leaders',
       },
       {
         title: 'LEADING HIGH PERFORMANCE TEAMS',
         image:
           'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80',
         summary:
-          'Practical coaching frameworks to align team accountability, feedback culture, and sustained execution velocity.',
-        audience: 'People Leaders & Functional Heads',
+          'Unleash your team’s talent through clear goal alignment, coaching feedback loops, and execution accountability.',
+        audience: 'Department Heads & People Managers',
       },
       {
-        title: 'MANAGING ROLE TRANSITION: PREPARING FOR THE NEXT LEVEL',
+        title: 'MANAGING ROLE TRANSITION: PREPARING FOR THE NEXT ROLE',
         image:
           'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80',
         summary:
-          'Structured 90-day transition coaching preparing newly promoted executives for broader strategic responsibility.',
-        audience: 'Newly Promoted VPs & General Managers',
+          'Structured leadership transition program preparing executives and rising leaders to step confidently into higher roles.',
+        audience: 'Newly Promoted CXOs, VPs & Functional Heads',
       },
     ],
   },
@@ -339,51 +329,51 @@ export const TOP_PROGRAM_TABS = [
     label: 'Impact Sales Training',
     programs: [
       {
-        title: 'CONSULTATIVE VALUE SELLING',
+        title: 'IMPACT SALES TRAINING',
         image:
           'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=80',
         summary:
-          'Shift commercial conversations from price discounting to diagnostic, ROI-backed client advisory.',
-        audience: 'Enterprise Account Executives & BD Leads',
+          'Flagship revenue enablement program built to help commercial teams shift from transactional pitches to consultative value wins.',
+        audience: 'Enterprise Sales & Business Development Teams',
       },
       {
-        title: 'KEY ACCOUNT MANAGEMENT & FARMING',
+        title: 'SELL LIKE A CHAMPION',
         image:
           'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80',
         summary:
-          'Expand multi-year enterprise relationships through structured account mapping and stakeholder alignment.',
-        audience: 'Key Account Managers & Client Partners',
+          'Be an achiever, not just a performer — mindset, attitude, and pipeline habits of top-decile sales producers.',
+        audience: 'Territory Managers & Account Executives',
       },
       {
-        title: 'HIGH-IMPACT B2B NEGOTIATION',
+        title: 'POWER SELLING',
         image: '/executive-leadership.jpg',
         summary:
-          'Field-tested margin defense, objection handling, and win-win deal structuring for complex sales cycles.',
-        audience: 'Commercial Heads & Senior Sales Reps',
+          'High-velocity discovery, stakeholder persuasion, and confident deal acceleration in competitive markets.',
+        audience: 'B2B & Channel Sales Professionals',
       },
       {
-        title: 'SALES LEADERSHIP & PIPELINE COACHING',
+        title: 'NEGOTIATION TECHNIQUES FOR SALES TEAM',
         image:
           'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=80',
         summary:
-          'Equip regional sales managers with forecasting rigor, pipeline inspection habits, and rep coaching cadence.',
-        audience: 'Regional Sales Managers & Directors',
+          'Margin-protecting negotiation frameworks, objection mastery, and win-win enterprise contract closures.',
+        audience: 'Commercial Heads & Key Account Managers',
       },
       {
-        title: 'CHANNEL & DISTRIBUTION EXPANSION',
+        title: 'CUSTOMER FIRST',
         image:
           'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80',
         summary:
-          'Build disciplined distributor onboarding, territory coverage, and secondary sales momentum.',
-        audience: 'FMCG, Consumer & Industrial Sales Teams',
+          'Embed customer centricity, account farming, and long-term relationship building into every client touchpoint.',
+        audience: 'Client Servicing & Account Management Teams',
       },
       {
-        title: 'EXECUTIVE PITCH & CLOSING MASTERY',
+        title: 'YOU ARE A BRAND',
         image:
           'https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=900&q=80',
         summary:
-          'Deliver persuasive boardroom proposals with compelling business cases and confident closing techniques.',
-        audience: 'Pre-Sales, Solutions & Senior BD Teams',
+          'Build executive credibility, consultative trust, and memorable personal positioning with enterprise buyers.',
+        audience: 'Client-Facing Leaders & Sales Advisors',
       },
     ],
   },
@@ -392,51 +382,51 @@ export const TOP_PROGRAM_TABS = [
     label: 'Soft Skill Programs',
     programs: [
       {
-        title: 'EXECUTIVE COMMUNICATION & INFLUENCE',
+        title: 'REINVENT THE INNER YOU',
         image:
           'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80',
         summary:
-          'Master concise executive messaging, active listening, and persuasive stakeholder alignment.',
-        audience: 'Managers & High-Potential Talent',
+          'Attitude, ambition, and initiative — unlock peak personal motivation, resilience, and workplace clarity.',
+        audience: 'Professionals & Emerging Managers',
       },
       {
-        title: 'EMOTIONAL INTELLIGENCE AT WORKPLACE',
+        title: 'IMPRESSIVE PERSONALITY FOR ACHIEVING SUCCESS',
         image:
           'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80',
         summary:
-          'Strengthen self-awareness, empathy, and composure under pressure across diverse corporate teams.',
-        audience: 'Cross-Functional Corporate Teams',
+          'Elevate poise, emotional intelligence, and professional demeanor to become a confident workplace standout.',
+        audience: 'Executives & Client-Facing Teams',
       },
       {
-        title: 'TRAIN THE TRAINER CERTIFICATION',
+        title: 'BUSINESS COMMUNICATION SKILLS',
         image: '/executive-leadership.jpg',
         summary:
-          'Build certified internal facilitators capable of designing and delivering engaging competency workshops.',
-        audience: 'L&D Specialists & Internal Facilitators',
+          'Clear verbal, written, and cross-functional corporate communication designed for modern organizations.',
+        audience: 'Managers, Analysts & Corporate Cohorts',
       },
       {
-        title: 'PRESENTATION & STORYTELLING IMPACT',
+        title: 'HI IMPACT PRESENTATION SKILL PROGRAM',
         image:
           'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=900&q=80',
         summary:
-          'Structure data-rich narratives and command room presence for client briefings and leadership reviews.',
-        audience: 'Team Leads, Consultants & Analysts',
+          'Design structured business presentations and deliver boardroom stories with confidence and persuasion.',
+        audience: 'Team Leads, Trainers & Consultants',
       },
       {
-        title: 'CONFLICT RESOLUTION & COLLABORATION',
+        title: 'INFLUENCING OTHERS',
         image:
           'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80',
         summary:
-          'Navigate workplace friction constructively while building psychological safety and shared accountability.',
-        audience: 'Supervisors & Project Managers',
+          'Practical assertiveness, stakeholder alignment, and collaboration skills without relying solely on authority.',
+        audience: 'Project Managers & Cross-Functional Leads',
       },
       {
-        title: 'TIME MANAGEMENT & EFFECTIVENESS',
+        title: 'MASTER YOUR DECISION MAKING',
         image:
           'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80',
         summary:
-          'Prioritize high-leverage deliverables, eliminate workflow bottlenecks, and sustain peak daily focus.',
-        audience: 'All Corporate & Operational Roles',
+          'Structured analytical prioritization, assertiveness at work, and overcoming procrastination — first things first.',
+        audience: 'Supervisors & Operational Leaders',
       },
     ],
   },
@@ -445,51 +435,28 @@ export const TOP_PROGRAM_TABS = [
     label: 'University Programs',
     programs: [
       {
-        title: 'CAMPUS TO CORPORATE READINESS',
+        title: 'JOURNEY TO CORPORATE LIFE (FOUNDATION PROGRAM)',
         image:
           'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80',
         summary:
-          'Accelerate workplace transition with corporate expectations, professional mindset, and execution discipline.',
-        audience: 'Final-Year Graduates & MBA Cohorts',
+          'Foundation track bridging university academics with real corporate culture, etiquette, attitude, and execution habits.',
+        audience: 'Undergraduate & Early Postgraduate Students',
       },
       {
-        title: 'STRUCTURED INTERVIEW & GD MASTERY',
+        title: 'HOW TO BE EMPLOYABLE? (MASTER PROGRAM)',
         image:
           'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80',
         summary:
-          'Real-world mock interviews, group discussion simulations, and structured recruiter feedback panels.',
-        audience: 'Placement Cells & Campus Candidates',
+          'Comprehensive employability certification covering communication, structured interviews, GD readiness, and career positioning.',
+        audience: 'Final-Year Graduates & MBA Placement Cohorts',
       },
       {
-        title: 'BUSINESS ETIQUETTE & WORKPLACE ETHICS',
+        title: 'HOW TO BE EMPLOYABLE? (SPECIALIZED PROGRAM)',
         image:
           'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=80',
         summary:
-          'Cultivate executive polish, digital communication hygiene, and ethical accountability from day one.',
-        audience: 'Undergraduate & Postgraduate Students',
-      },
-      {
-        title: 'RESUME CRAFT & CAREER POSITIONING',
-        image:
-          'https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=900&q=80',
-        summary:
-          'Align academic projects and personal strengths with modern corporate hiring benchmarks.',
-        audience: 'Job-Ready Graduates & Interns',
-      },
-      {
-        title: 'ANALYTICAL & PROBLEM SOLVING LABS',
-        image:
-          'https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&w=900&q=80',
-        summary:
-          'Hands-on business case drills sharpens structured thinking, teamwork, and commercial awareness.',
-        audience: 'Management & Engineering Campuses',
-      },
-      {
-        title: 'INDUSTRY MENTORSHIP & PLACEMENT PREP',
-        image: '/executive-search.jpg',
-        summary:
-          'Direct mentoring by seasoned IBA search advisors to bridge campus learning with hiring realities.',
-        audience: 'Partner Universities & Business Schools',
+          'Targeted campus hiring specialization aligned with corporate competency benchmarks and Partner University drives.',
+        audience: 'Campus Hiring Partners & University Cells',
       },
     ],
   },
