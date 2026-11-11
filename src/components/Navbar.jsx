@@ -19,8 +19,8 @@ export default function Navbar() {
         scrolled ? 'shadow-md shadow-slate-900/5' : ''
       }`}
     >
-      {/* Top Corporate #337AB7 Strip (Secondary Nav + Location) */}
-      <div className="hidden lg:block bg-[#337AB7] text-white text-xs">
+      {/* Top Corporate #0C2544 Strip (Secondary Nav + Location) */}
+      <div className="hidden lg:block bg-[#0C2544] text-white text-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-between gap-4">
           <div className="flex items-center gap-5 text-white/90">
             <span className="inline-flex items-center gap-1.5 font-medium">

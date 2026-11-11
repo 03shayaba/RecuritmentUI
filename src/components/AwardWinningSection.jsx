@@ -43,7 +43,7 @@ export default function AwardWinningSection() {
   }, [modalMode]);
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-slate-100">
+    <section className="py-16 sm:py-20 lg:py-24 bg-[#EDF4FB]/85 border-y border-[#337AB7]/15">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Heading matching reference layout */}
         <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight text-[#0C2544] leading-[1.2] mb-10 sm:mb-12">
@@ -89,8 +89,8 @@ export default function AwardWinningSection() {
                   loading="lazy"
                   className="h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
-                {/* Bottom #337AB7 bar */}
-                <div className="absolute inset-x-0 bottom-0 bg-[#337AB7]/95 group-hover:bg-[#286090] px-5 py-4 flex items-center justify-between text-white transition-colors">
+                {/* Bottom #0C2544 -> #337AB7 bar */}
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-r from-[#0C2544]/95 to-[#337AB7]/95 group-hover:from-[#0C2544] group-hover:to-[#286090] px-5 py-4 flex items-center justify-between text-white transition-colors">
                   <span className="text-sm sm:text-base font-semibold tracking-tight">
                     {card.title}
                   </span>

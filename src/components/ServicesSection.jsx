@@ -134,7 +134,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="py-20 sm:py-24 bg-slate-50/80 border-y border-slate-200/70"
+      className="py-20 sm:py-24 bg-gradient-to-b from-white via-[#F5F9FE] to-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Row: Eyebrow + Title | Circular Prev/Next Buttons */}
@@ -188,7 +188,7 @@ export default function ServicesSection() {
                   key={`${service.title}-${idx}`}
                   className="w-full md:w-1/2 lg:w-1/3 shrink-0 px-3"
                 >
-                  <article className="group h-full rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm hover:shadow-xl hover:border-[#337AB7]/40 transition-all duration-300 flex flex-col justify-between">
+                  <article className="group h-full rounded-2xl border border-[#337AB7]/20 border-t-4 border-t-[#337AB7] hover:border-t-[#0C2544] bg-white p-5 sm:p-6 shadow-md shadow-[#0C2544]/5 hover:shadow-xl hover:border-[#337AB7]/50 transition-all duration-300 flex flex-col justify-between">
                     <div>
                       {/* Card Image + Floating Icon Badge */}
                       <div className="relative mb-8">
@@ -200,7 +200,7 @@ export default function ServicesSection() {
                             className="h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                           />
                         </div>
-                        <div className="absolute -bottom-6 right-5 w-14 h-14 rounded-xl bg-white border border-slate-100 shadow-lg flex items-center justify-center text-[#337AB7] group-hover:bg-[#337AB7] group-hover:text-white transition-colors">
+                        <div className="absolute -bottom-6 right-5 w-14 h-14 rounded-xl bg-[#EDF4FB] border border-[#337AB7]/25 shadow-lg flex items-center justify-center text-[#337AB7] group-hover:bg-[#0C2544] group-hover:text-white transition-colors">
                           <Icon className="w-6 h-6" />
                         </div>
                       </div>
@@ -220,7 +220,7 @@ export default function ServicesSection() {
                       <button
                         type="button"
                         onClick={() => setSelectedService(service)}
-                        className="inline-flex items-center gap-1.5 text-sm font-bold text-slate-900 hover:text-[#337AB7] transition-colors cursor-pointer"
+                        className="inline-flex items-center gap-1.5 text-sm font-bold text-[#0C2544] hover:text-[#337AB7] transition-colors cursor-pointer"
                       >
                         Read More
                         <ArrowUpRight className="w-4 h-4" />

@@ -11,7 +11,7 @@ const HIGHLIGHTS = [
 
 export default function AboutLeadershipSection() {
   return (
-    <section id="about" className="py-20 sm:py-24 bg-slate-50/70 border-t border-slate-200/70">
+    <section id="about" className="py-20 sm:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left 6 Cols: 2-Column Bento Photo + #337AB7 Experience Card */}
@@ -38,8 +38,8 @@ export default function AboutLeadershipSection() {
 
             {/* Sub-column 2 */}
             <div className="flex flex-col gap-4 sm:gap-5">
-              {/* #337AB7 Outlined Experience Stat Card */}
-              <div className="rounded-xl bg-[#337AB7] text-white p-6 sm:p-7 shadow-lg shadow-[#337AB7]/20 flex items-center justify-center gap-4 h-36 sm:h-40">
+              {/* #0C2544 -> #337AB7 Outlined Experience Stat Card */}
+              <div className="rounded-xl bg-gradient-to-br from-[#0C2544] via-[#1B497D] to-[#337AB7] text-white p-6 sm:p-7 shadow-lg shadow-[#0C2544]/25 flex items-center justify-center gap-4 h-36 sm:h-40">
                 <div className="flex flex-col items-center leading-none">
                   <span
                     className="text-5xl sm:text-[54px] font-extrabold tracking-tight text-transparent select-none"
@@ -94,11 +94,11 @@ export default function AboutLeadershipSection() {
               Houses, SMEs, and Family-Owned Businesses.
             </p>
 
-            {/* Gray Checklist Box */}
-            <div className="rounded-xl bg-slate-100/90 border border-slate-200/70 p-6 sm:p-7">
+            {/* Soft Blue Checklist Box */}
+            <div className="rounded-xl bg-[#EDF4FB] border border-[#337AB7]/20 p-6 sm:p-7">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5">
                 {HIGHLIGHTS.map((item) => (
-                  <div key={item} className="flex items-center gap-2.5 text-sm font-medium text-slate-800">
+                  <div key={item} className="flex items-center gap-2.5 text-sm font-semibold text-[#0C2544]">
                     <Check className="w-4 h-4 text-[#337AB7] shrink-0" strokeWidth={2.5} />
                     <span>{item}</span>
                   </div>
@@ -112,24 +112,24 @@ export default function AboutLeadershipSection() {
                 href="mailto:info@ibaconsultingworldwide.com"
                 className="group flex items-center gap-3.5"
               >
-                <span className="w-12 h-12 rounded-full bg-[#337AB7] group-hover:bg-[#286090] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#337AB7]/25 transition-colors">
+                <span className="w-12 h-12 rounded-full bg-[#0C2544] group-hover:bg-[#337AB7] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#0C2544]/25 transition-colors">
                   <Send className="w-5 h-5" />
                 </span>
                 <div>
                   <p className="text-xs font-bold text-[#337AB7]">Email Us</p>
-                  <p className="text-sm font-bold text-slate-900 group-hover:text-[#337AB7] transition-colors">
+                  <p className="text-sm font-bold text-[#0C2544] group-hover:text-[#337AB7] transition-colors">
                     info@ibaconsultingworldwide.com
                   </p>
                 </div>
               </a>
 
               <a href="#faqs" className="group flex items-center gap-3.5">
-                <span className="w-12 h-12 rounded-full bg-[#337AB7] group-hover:bg-[#286090] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#337AB7]/25 transition-colors">
+                <span className="w-12 h-12 rounded-full bg-[#337AB7] group-hover:bg-[#0C2544] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#337AB7]/25 transition-colors">
                   <PhoneCall className="w-5 h-5" />
                 </span>
                 <div>
                   <p className="text-xs font-bold text-[#337AB7]">Have question?</p>
-                  <p className="text-sm font-bold text-slate-900 group-hover:text-[#337AB7] transition-colors">
+                  <p className="text-sm font-bold text-[#0C2544] group-hover:text-[#337AB7] transition-colors">
                     Explore our FAQ section
                   </p>
                 </div>

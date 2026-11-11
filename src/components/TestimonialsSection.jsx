@@ -59,7 +59,7 @@ export default function TestimonialsSection() {
   return (
     <section
       id="testimonials"
-      className="py-20 sm:py-24 bg-gradient-to-b from-[#EDF4FB]/85 via-[#F6FAFE] to-white border-t border-slate-200/70"
+      className="py-20 sm:py-24 bg-gradient-to-b from-[#DCEAF8] via-[#EDF4FB] to-[#E4EFFA] border-y border-[#337AB7]/15"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-8 items-stretch">
@@ -114,7 +114,7 @@ export default function TestimonialsSection() {
                     key={`${item.name}-${idx}`}
                     className="w-full md:w-1/2 shrink-0 px-3"
                   >
-                    <article className="h-full rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm hover:shadow-lg hover:border-[#337AB7]/35 transition-all flex flex-col justify-between">
+                    <article className="h-full rounded-2xl border border-[#337AB7]/20 border-t-4 border-t-[#337AB7] bg-white p-6 shadow-md shadow-[#0C2544]/5 hover:shadow-xl hover:border-t-[#0C2544] transition-all flex flex-col justify-between">
                       {/* Author Row */}
                       <div className="flex items-center gap-3.5 mb-5">
                         <img
