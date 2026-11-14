@@ -11,14 +11,14 @@ const HIGHLIGHTS = [
 
 export default function AboutLeadershipSection() {
   return (
-    <section id="about" className="py-14 sm:py-20 lg:py-24 bg-white">
+    <section id="about" className="py-14 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F0F6FC] via-white to-[#F0F6FC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 items-center">
-          {/* Left 6 Cols: 2-Column Bento Photo + #337AB7 Experience Card */}
+          {/* Left 6 Cols: 2-Column Bento Photo + Experience Card */}
           <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
             {/* Sub-column 1 */}
             <div className="flex flex-col gap-4 sm:gap-5">
-              <div className="overflow-hidden rounded-xl border border-slate-200 bg-slate-100 shadow-sm h-52 sm:h-64">
+              <div className="overflow-hidden rounded-xl border border-[#23588F]/20 bg-slate-100 shadow-xs h-52 sm:h-64">
                 <img
                   src="/executive-leadership.jpg"
                   alt="IBA Consulting advisory team meeting"
@@ -26,7 +26,7 @@ export default function AboutLeadershipSection() {
                   className="h-full w-full object-cover object-center hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="overflow-hidden rounded-xl border border-slate-200 bg-slate-100 shadow-sm h-44 sm:h-52">
+              <div className="overflow-hidden rounded-xl border border-[#23588F]/20 bg-slate-100 shadow-xs h-44 sm:h-52">
                 <img
                   src="/executive-search.jpg"
                   alt="IBA Executive Search worldwide"
@@ -38,31 +38,30 @@ export default function AboutLeadershipSection() {
 
             {/* Sub-column 2 */}
             <div className="flex flex-col gap-4 sm:gap-5">
-              {/* #0C2544 -> #337AB7 Outlined Experience Stat Card */}
-              <div className="rounded-xl bg-gradient-to-br from-[#0C2544] via-[#1B497D] to-[#337AB7] text-white p-5 sm:p-7 shadow-lg shadow-[#0C2544]/25 flex items-center justify-center gap-4 h-32 sm:h-40">
+              {/* Deep Rich Navy -> Sapphire Experience Stat Card with Champagne Gold 25+ */}
+              <div className="rounded-xl bg-gradient-to-br from-[#081D36] via-[#0C2B4E] to-[#1E4D7E] text-white p-5 sm:p-7 shadow-lg shadow-[#081D36]/30 flex items-center justify-center gap-4 h-32 sm:h-40 border border-[#C5A16D]/35">
                 <div className="flex flex-col items-center leading-none">
                   <span
                     className="text-4xl sm:text-[54px] font-extrabold tracking-tight text-transparent select-none"
-                    style={{ WebkitTextStroke: '1.75px #ffffff' }}
+                    style={{ WebkitTextStroke: '2px #C5A16D' }}
                   >
                     25
                   </span>
                   <span
-                    className="text-xl sm:text-2xl font-extrabold text-transparent -mt-1 select-none"
-                    style={{ WebkitTextStroke: '1.5px #ffffff' }}
+                    className="text-xl sm:text-2xl font-extrabold text-[#C5A16D] -mt-1 select-none"
                   >
                     +
                   </span>
                 </div>
-                <p className="text-base sm:text-lg font-bold leading-snug">
+                <p className="text-base sm:text-lg font-bold leading-snug text-[#DFCAAA]">
                   Years of
                   <br />
-                  experience
+                  <span className="text-white">experience</span>
                 </p>
               </div>
 
               {/* Tall Consultation Image */}
-              <div className="overflow-hidden rounded-xl border border-slate-200 bg-slate-100 shadow-sm h-56 sm:h-[304px]">
+              <div className="overflow-hidden rounded-xl border border-[#23588F]/20 bg-slate-100 shadow-xs h-56 sm:h-[304px]">
                 <img
                   src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=700&q=80"
                   alt="Senior IBA HR consultant"
@@ -82,7 +81,7 @@ export default function AboutLeadershipSection() {
               <h2 className="text-2xl sm:text-4xl lg:text-[42px] font-extrabold text-[#0C2544] tracking-tight leading-[1.18]">
                 Building Success <span className="text-[#337AB7]">Together,</span>
                 <br />
-                <span className="text-[#337AB7]">HR Solutions</span> at Scale.
+                <span className="text-[#0C2544]">HR Solutions</span> at Scale.
               </h2>
             </div>
 
@@ -95,7 +94,7 @@ export default function AboutLeadershipSection() {
             </p>
 
             {/* Soft Blue Checklist Box */}
-            <div className="rounded-xl bg-[#EDF4FB] border border-[#337AB7]/20 p-6 sm:p-7">
+            <div className="rounded-xl bg-[#EAF2FA] border border-[#337AB7]/25 p-6 sm:p-7">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5">
                 {HIGHLIGHTS.map((item) => (
                   <div key={item} className="flex items-center gap-2.5 text-sm font-semibold text-[#0C2544]">
@@ -112,8 +111,8 @@ export default function AboutLeadershipSection() {
                 href="mailto:info@ibaconsultingworldwide.com"
                 className="group flex items-center gap-3.5 min-w-0"
               >
-                <span className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#0C2544] group-hover:bg-[#337AB7] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#0C2544]/25 transition-colors">
-                  <Send className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#0C2544] group-hover:bg-[#337AB7] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#0C2544]/25 transition-all duration-200">
+                  <Send className="w-4 h-4 sm:w-5 sm:h-5 text-sky-200" />
                 </span>
                 <div className="min-w-0">
                   <p className="text-xs font-bold text-[#337AB7]">Email Us</p>
@@ -124,11 +123,11 @@ export default function AboutLeadershipSection() {
               </a>
 
               <a href="#faqs" className="group flex items-center gap-3.5 min-w-0">
-                <span className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#337AB7] group-hover:bg-[#0C2544] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#337AB7]/25 transition-colors">
+                <span className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#337AB7] group-hover:bg-[#0C2544] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#337AB7]/25 transition-all duration-200">
                   <PhoneCall className="w-4 h-4 sm:w-5 sm:h-5" />
                 </span>
                 <div className="min-w-0">
-                  <p className="text-xs font-bold text-[#337AB7]">Have question?</p>
+                  <p className="text-xs font-bold text-slate-500">Have question?</p>
                   <p className="text-xs sm:text-sm font-bold text-[#0C2544] group-hover:text-[#337AB7] transition-colors">
                     Explore our FAQ section
                   </p>

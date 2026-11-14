@@ -16,7 +16,6 @@ function CircularStat({ percent, labelTop, labelBottom, animate }) {
     const step = (now) => {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // Cubic ease-out for smooth deceleration
       const eased = 1 - Math.pow(1 - progress, 3);
       setDisplayPercent(Math.round(eased * percent));
       if (progress < 1) {
@@ -40,8 +39,7 @@ function CircularStat({ percent, labelTop, labelBottom, animate }) {
             cy="50"
             r={radius}
             fill="none"
-            stroke="#ffffff"
-            strokeOpacity="0.2"
+            stroke="rgba(255, 255, 255, 0.15)"
             strokeWidth="3.5"
           />
           <circle
@@ -49,15 +47,15 @@ function CircularStat({ percent, labelTop, labelBottom, animate }) {
             cy="50"
             r={radius}
             fill="none"
-            stroke="#5CA8EB"
+            stroke="#C5A16D"
             strokeWidth="4"
             strokeLinecap="round"
             strokeDasharray={circumference}
             strokeDashoffset={strokeDashoffset}
           />
         </svg>
-        <div className="absolute inset-2.5 sm:inset-3.5 rounded-full bg-white shadow-lg flex items-center justify-center">
-          <span className="text-lg sm:text-2xl font-extrabold text-[#337AB7] tracking-tight tabular-nums">
+        <div className="absolute inset-2.5 sm:inset-3.5 rounded-full bg-[#0A0F14] border border-[#C5A16D]/30 shadow-lg flex items-center justify-center">
+          <span className="text-lg sm:text-2xl font-extrabold text-[#C5A16D] tracking-tight tabular-nums">
             {displayPercent}
             <span className="text-[10px] sm:text-xs font-bold align-top ml-0.5">%</span>
           </span>
@@ -66,7 +64,7 @@ function CircularStat({ percent, labelTop, labelBottom, animate }) {
 
       <div className="leading-snug">
         <p className="text-sm sm:text-lg font-bold text-white">{labelTop}</p>
-        <p className="text-sm sm:text-lg font-bold text-white/90">{labelBottom}</p>
+        <p className="text-sm sm:text-lg font-bold text-[#DFCAAA]">{labelBottom}</p>
       </div>
     </div>
   );
@@ -98,16 +96,16 @@ export default function FaqSection() {
   return (
     <section
       id="faqs"
-      className="relative py-14 sm:py-24 lg:py-32 bg-gradient-to-br from-[#0C2544] via-[#13345D] to-[#1D4C80] text-white overflow-hidden"
+      className="relative py-14 sm:py-24 lg:py-32 bg-gradient-to-br from-[#0A0F14] via-[#122A3E] to-[#0A0F14] text-white overflow-hidden"
     >
-      <div className="pointer-events-none absolute -top-24 left-1/3 w-96 h-96 rounded-full bg-[#337AB7]/25 blur-3xl" />
+      <div className="pointer-events-none absolute -top-24 left-1/3 w-96 h-96 rounded-full bg-[#C5A16D]/15 blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Row: Image + Balanced 2-Line Heading | Numbered FAQ Accordion */}
         <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-start">
           {/* Left Column */}
           <div className="lg:col-span-5 space-y-5 sm:space-y-7">
-            <div className="overflow-hidden rounded-2xl border border-white/15 bg-white shadow-2xl">
+            <div className="overflow-hidden rounded-2xl border border-[#C5A16D]/30 bg-white shadow-2xl">
               <img
                 src="/bottom-banner.jpg"
                 alt="IBA Consulting Worldwide team collaboration"
@@ -117,13 +115,13 @@ export default function FaqSection() {
             </div>
 
             <div className="space-y-2.5 sm:space-y-3">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-sky-300">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C5A16D]">
                 / Why Choose Us? /
               </p>
               <h2 className="text-2xl sm:text-4xl lg:text-[42px] font-extrabold text-white tracking-tight leading-[1.18]">
                 Trusted Search &amp;
                 <br />
-                <span className="text-sky-300">HR Advisory Partner.</span>
+                <span className="text-[#C5A16D]">HR Advisory Partner.</span>
               </h2>
             </div>
           </div>
@@ -137,8 +135,8 @@ export default function FaqSection() {
                   key={faq.num}
                   className={`rounded-2xl border transition-all duration-200 ${
                     isOpen
-                      ? 'bg-white text-slate-900 border-white shadow-2xl'
-                      : 'bg-white/[0.07] text-white border-white/15 hover:bg-white/[0.12] hover:border-white/30'
+                      ? 'bg-white text-[#122A3E] border-white shadow-2xl'
+                      : 'bg-white/[0.05] text-white border-white/10 hover:bg-white/[0.1] hover:border-[#C5A16D]/40'
                   }`}
                 >
                   <button
@@ -149,10 +147,10 @@ export default function FaqSection() {
                   >
                     <span
                       className={`text-sm sm:text-base font-bold ${
-                        isOpen ? 'text-[#0C2544]' : 'text-white'
+                        isOpen ? 'text-[#122A3E]' : 'text-white'
                       }`}
                     >
-                      <span className={`mr-1.5 ${isOpen ? 'text-[#337AB7]' : 'text-sky-300'}`}>
+                      <span className={`mr-1.5 ${isOpen ? 'text-[#C5A16D]' : 'text-[#DFCAAA]'}`}>
                         {faq.num}
                       </span>
                       {faq.question}
@@ -160,8 +158,8 @@ export default function FaqSection() {
                     <span
                       className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors ${
                         isOpen
-                          ? 'bg-[#EDF4FB] text-[#337AB7]'
-                          : 'bg-white/10 text-white'
+                          ? 'bg-[#F5F3EE] text-[#C5A16D]'
+                          : 'bg-white/10 text-[#DFCAAA]'
                       }`}
                     >
                       {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
@@ -169,7 +167,7 @@ export default function FaqSection() {
                   </button>
 
                   {isOpen && (
-                    <div className="px-4 sm:px-7 pb-5 sm:pb-6 text-xs sm:text-[15px] text-slate-600 leading-relaxed">
+                    <div className="px-4 sm:px-7 pb-5 sm:pb-6 text-xs sm:text-[15px] text-[#283A46] leading-relaxed">
                       {faq.answer}
                     </div>
                   )}
@@ -179,10 +177,10 @@ export default function FaqSection() {
           </div>
         </div>
 
-        {/* Hairline Divider */}
-        <div className="my-12 sm:my-16 lg:my-20 border-t border-white/15" />
+        {/* Hairline Divider in Slate/Gold */}
+        <div className="my-12 sm:my-16 lg:my-20 border-t border-white/10" />
 
-        {/* Bottom Row: Animated Circular Progress Gauges (2x2 Grid on Mobile) */}
+        {/* Bottom Row: Animated Circular Progress Gauges in Champagne Gold */}
         <div
           ref={statsRef}
           className="grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-10"

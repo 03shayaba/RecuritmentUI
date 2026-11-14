@@ -3,10 +3,24 @@
 @theme {
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-display: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
-  --color-brand: #337AB7;
-  --color-brand-dark: #286090;
-  --color-brand-light: #EDF4FB;
-  --color-navy: #0C2544;
+  
+  /* Brand Theme Colors */
+  --color-gold: #C5A16D;
+  --color-gold-dark: #A9844F;
+  --color-gold-light: #DFCAAA;
+  --color-gold-muted: rgba(197, 161, 109, 0.15);
+  
+  --color-ivory: #F5F3EE;
+  --color-ivory-dark: #EAE6DC;
+  
+  --color-navy: #122A3E;
+  --color-navy-dark: #0B1C2A;
+  --color-navy-light: #1A3C59;
+  
+  --color-slate-custom: #283A46;
+  --color-slate-dark: #1E2B34;
+  
+  --color-brand-black: #0A0F14;
 }
 
 @layer base {
@@ -15,6 +29,8 @@
     scroll-padding-top: 6rem;
     font-family: var(--font-sans);
     overflow-x: clip;
+    background-color: #FFFFFF;
+    color: #122A3E;
   }
 
   body {

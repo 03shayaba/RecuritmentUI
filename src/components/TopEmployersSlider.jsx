@@ -302,7 +302,7 @@ function LogoMarqueeRow({ logos, direction = 'left' }) {
           <div
             key={`${brand.name}-${idx}`}
             title={brand.name}
-            className="w-36 sm:w-48 h-20 sm:h-24 rounded-xl border border-slate-200/90 bg-white px-3 sm:px-4 flex items-center justify-center shadow-xs hover:shadow-md hover:border-[#337AB7]/45 transition-all duration-300 shrink-0"
+            className="w-36 sm:w-48 h-20 sm:h-24 rounded-xl border border-[#EAE6DC] bg-white px-3 sm:px-4 flex items-center justify-center shadow-2xs hover:shadow-md hover:border-[#C5A16D]/60 transition-all duration-300 shrink-0"
           >
             {brand.render()}
           </div>
@@ -316,16 +316,16 @@ export default function TopEmployersSlider() {
   return (
     <section
       id="employers"
-      className="py-14 sm:py-20 bg-white border-y border-slate-200/80 overflow-hidden"
+      className="py-14 sm:py-20 bg-white border-y border-[#EAE6DC] overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-10 text-center space-y-2.5">
-        <p className="text-xs font-bold uppercase tracking-widest text-[#337AB7]">
+        <p className="text-xs font-bold uppercase tracking-widest text-[#C5A16D]">
           / Our Clients &amp; Partners /
         </p>
-        <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0C2544] tracking-tight uppercase">
-          Top <span className="text-[#337AB7]">Employers</span>
+        <h2 className="text-2xl sm:text-4xl font-extrabold text-[#122A3E] tracking-tight uppercase">
+          Top <span className="text-[#C5A16D]">Employers</span>
         </h2>
-        <p className="text-xs sm:text-base text-slate-600 max-w-2xl mx-auto">
+        <p className="text-xs sm:text-base text-[#283A46] max-w-2xl mx-auto">
           Trusted by Fortune 500 MNCs, Indian conglomerates, and high-growth industry
           leaders across sectors.
         </p>

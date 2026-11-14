@@ -91,7 +91,6 @@ export default function ServicesSection() {
       else if (window.innerWidth >= 768) setVisibleCount(2);
       else setVisibleCount(1);
     };
-    updateCols();
     window.addEventListener('resize', updateCols);
     return () => window.removeEventListener('resize', updateCols);
   }, []);
@@ -101,27 +100,10 @@ export default function ServicesSection() {
     setSlideIndex((prev) => prev + 1);
   }, []);
 
-  const prevSlide = () => {
-    if (slideIndex === 0) {
-      setIsTransitioning(false);
-      setSlideIndex(SERVICE_CARDS.length);
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          setIsTransitioning(true);
-          setSlideIndex(SERVICE_CARDS.length - 1);
-        });
-      });
-      return;
-    }
+  const prevSlide = useCallback(() => {
     setIsTransitioning(true);
-    setSlideIndex((prev) => prev - 1);
-  };
-
-  useEffect(() => {
-    if (selectedService) return;
-    const timer = setInterval(nextSlide, 4200);
-    return () => clearInterval(timer);
-  }, [nextSlide, selectedService]);
+    setSlideIndex((prev) => (prev > 0 ? prev - 1 : 0));
+  }, []);
 
   const handleTransitionEnd = () => {
     if (slideIndex >= SERVICE_CARDS.length) {
@@ -135,17 +117,17 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="py-14 sm:py-20 lg:py-24 bg-gradient-to-b from-white via-[#F5F9FE] to-white"
+      className="py-14 sm:py-20 lg:py-24 bg-gradient-to-b from-white via-[#F5F3EE]/50 to-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Row: Eyebrow + Title | Circular Prev/Next Buttons */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-5 mb-8 sm:mb-12">
           <div className="space-y-2">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#337AB7]">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#C5A16D]">
               / Services /
             </p>
-            <h2 className="text-2xl sm:text-4xl lg:text-[42px] font-extrabold text-[#0C2544] tracking-tight leading-[1.18]">
-              Innovative <span className="text-[#337AB7]">Solutions</span> for Talents
+            <h2 className="text-2xl sm:text-4xl lg:text-[42px] font-extrabold text-[#122A3E] tracking-tight leading-[1.18]">
+              Innovative <span className="text-[#C5A16D]">Solutions</span> for Talents
             </h2>
           </div>
 
@@ -154,7 +136,7 @@ export default function ServicesSection() {
               type="button"
               onClick={prevSlide}
               aria-label="Previous services"
-              className="w-11 h-11 rounded-full bg-[#0C2544] hover:bg-[#163C6B] text-white flex items-center justify-center shadow-sm transition-colors cursor-pointer"
+              className="w-11 h-11 rounded-full bg-[#0A0F14] hover:bg-[#122A3E] text-white flex items-center justify-center shadow-sm border border-[#283A46] transition-colors cursor-pointer"
             >
               <ArrowLeft className="w-4 h-4" />
             </button>
@@ -162,14 +144,14 @@ export default function ServicesSection() {
               type="button"
               onClick={nextSlide}
               aria-label="Next services"
-              className="w-11 h-11 rounded-full bg-[#337AB7] hover:bg-[#286090] text-white flex items-center justify-center shadow-md shadow-[#337AB7]/25 transition-colors cursor-pointer"
+              className="w-11 h-11 rounded-full bg-[#C5A16D] hover:bg-[#A9844F] text-[#0A0F14] flex items-center justify-center shadow-md shadow-[#C5A16D]/20 transition-colors cursor-pointer"
             >
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>
 
-        {/* Smooth Sliding Cards Track (supports touch swipe on mobile) */}
+        {/* Smooth Sliding Cards Track */}
         <div
           className="overflow-hidden -mx-3 touch-pan-y"
           onTouchStart={(e) => {
@@ -201,11 +183,11 @@ export default function ServicesSection() {
                   key={`${service.title}-${idx}`}
                   className="w-full md:w-1/2 lg:w-1/3 shrink-0 px-3"
                 >
-                  <article className="group h-full rounded-2xl border border-[#337AB7]/20 border-t-4 border-t-[#337AB7] hover:border-t-[#0C2544] bg-white p-5 sm:p-6 shadow-md shadow-[#0C2544]/5 hover:shadow-xl hover:border-[#337AB7]/50 transition-all duration-300 flex flex-col justify-between">
+                  <article className="group h-full rounded-2xl border border-[#EAE6DC] border-t-4 border-t-[#C5A16D] hover:border-t-[#0A0F14] bg-white p-5 sm:p-6 shadow-md shadow-black/5 hover:shadow-xl hover:border-[#C5A16D]/50 transition-all duration-300 flex flex-col justify-between">
                     <div>
                       {/* Card Image + Floating Icon Badge */}
                       <div className="relative mb-8">
-                        <div className="overflow-hidden rounded-xl h-52 bg-slate-100">
+                        <div className="overflow-hidden rounded-xl h-52 bg-[#F5F3EE]">
                           <img
                             src={service.image}
                             alt={service.title}
@@ -213,18 +195,18 @@ export default function ServicesSection() {
                             className="h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                           />
                         </div>
-                        <div className="absolute -bottom-6 right-5 w-14 h-14 rounded-xl bg-[#EDF4FB] border border-[#337AB7]/25 shadow-lg flex items-center justify-center text-[#337AB7] group-hover:bg-[#0C2544] group-hover:text-white transition-colors">
+                        <div className="absolute -bottom-6 right-5 w-14 h-14 rounded-xl bg-[#F5F3EE] border border-[#C5A16D]/30 shadow-lg flex items-center justify-center text-[#C5A16D] group-hover:bg-[#0A0F14] group-hover:text-[#C5A16D] transition-colors">
                           <Icon className="w-6 h-6" />
                         </div>
                       </div>
 
-                      <p className="text-xs font-semibold text-[#337AB7] mb-1.5">
+                      <p className="text-xs font-semibold text-[#C5A16D] mb-1.5 uppercase tracking-wider">
                         {service.tag}
                       </p>
-                      <h3 className="text-xl font-extrabold text-[#0C2544] mb-3">
+                      <h3 className="text-xl font-extrabold text-[#122A3E] mb-3">
                         {service.title}
                       </h3>
-                      <p className="text-sm text-slate-600 leading-relaxed mb-6">
+                      <p className="text-sm text-[#283A46] leading-relaxed mb-6">
                         {service.description}
                       </p>
                     </div>
@@ -233,10 +215,10 @@ export default function ServicesSection() {
                       <button
                         type="button"
                         onClick={() => setSelectedService(service)}
-                        className="inline-flex items-center gap-1.5 text-sm font-bold text-[#0C2544] hover:text-[#337AB7] transition-colors cursor-pointer"
+                        className="inline-flex items-center gap-1.5 text-sm font-bold text-[#122A3E] hover:text-[#C5A16D] transition-colors cursor-pointer"
                       >
                         Read More
-                        <ArrowUpRight className="w-4 h-4" />
+                        <ArrowUpRight className="w-4 h-4 text-[#C5A16D]" />
                       </button>
                     </div>
                   </article>
@@ -245,7 +227,8 @@ export default function ServicesSection() {
             })}
           </div>
         </div>
-        {/* Slide Indicator Dots for Mobile & Tablet */}
+
+        {/* Slide Indicator Dots */}
         <div className="mt-6 flex items-center justify-center gap-2 lg:hidden">
           {SERVICE_CARDS.map((service, idx) => {
             const activeDot = slideIndex % SERVICE_CARDS.length === idx;
@@ -259,7 +242,7 @@ export default function ServicesSection() {
                 }}
                 aria-label={`Show ${service.title}`}
                 className={`h-2 rounded-full transition-all cursor-pointer ${
-                  activeDot ? 'w-7 bg-[#337AB7]' : 'w-2 bg-slate-300'
+                  activeDot ? 'w-7 bg-[#C5A16D]' : 'w-2 bg-[#EAE6DC]'
                 }`}
               />
             );
@@ -270,39 +253,39 @@ export default function ServicesSection() {
       {/* Service Detail Modal */}
       {selectedService && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-xs p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-xs p-4"
           role="dialog"
           aria-modal="true"
         >
-          <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl bg-white p-5 sm:p-8 shadow-2xl border border-slate-200 space-y-5">
+          <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl bg-white p-5 sm:p-8 shadow-2xl border border-[#EAE6DC] space-y-5">
             <button
               type="button"
               onClick={() => setSelectedService(null)}
               aria-label="Close service details"
-              className="absolute right-4 top-4 rounded-lg p-1.5 text-slate-400 hover:bg-slate-100 hover:text-slate-700"
+              className="absolute right-4 top-4 rounded-lg p-1.5 text-[#283A46] hover:bg-[#F5F3EE] hover:text-[#122A3E]"
             >
               <X className="w-5 h-5" />
             </button>
 
             <div>
-              <p className="text-xs font-bold text-[#337AB7] uppercase tracking-wider">
+              <p className="text-xs font-bold text-[#C5A16D] uppercase tracking-wider">
                 {selectedService.tag}
               </p>
-              <h3 className="text-2xl font-extrabold text-slate-900 mt-1">
+              <h3 className="text-2xl font-extrabold text-[#122A3E] mt-1">
                 {selectedService.title}
               </h3>
-              <p className="text-sm text-slate-600 mt-2 leading-relaxed">
+              <p className="text-sm text-[#283A46] mt-2 leading-relaxed">
                 {selectedService.description}
               </p>
             </div>
 
-            <ul className="space-y-2.5 pt-2 border-t border-slate-100">
+            <ul className="space-y-2.5 pt-2 border-t border-[#EAE6DC]">
               {selectedService.details.map((detail) => (
                 <li
                   key={detail}
-                  className="flex items-start gap-2.5 text-sm text-slate-700"
+                  className="flex items-start gap-2.5 text-sm text-[#122A3E]"
                 >
-                  <CheckCircle2 className="w-4 h-4 text-[#337AB7] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#C5A16D] shrink-0 mt-0.5" />
                   <span>{detail}</span>
                 </li>
               ))}
@@ -312,17 +295,17 @@ export default function ServicesSection() {
               <button
                 type="button"
                 onClick={() => setSelectedService(null)}
-                className="rounded-xl border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-100"
+                className="rounded-xl border border-[#EAE6DC] px-4 py-2.5 text-sm font-semibold text-[#122A3E] hover:bg-[#F5F3EE]"
               >
                 Close
               </button>
               <a
                 href="#contact"
                 onClick={() => setSelectedService(null)}
-                className="inline-flex items-center gap-1.5 rounded-xl bg-[#337AB7] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#286090]"
+                className="inline-flex items-center gap-1.5 rounded-xl bg-[#C5A16D] hover:bg-[#A9844F] px-5 py-2.5 text-sm font-bold text-[#0A0F14]"
               >
                 Request Proposal
-                <ArrowUpRight className="w-4 h-4" />
+                <ArrowUpRight className="w-4 h-4 text-[#0A0F14]" />
               </a>
             </div>
           </div>
@@ -331,4 +314,3 @@ export default function ServicesSection() {
     </section>
   );
 }
-

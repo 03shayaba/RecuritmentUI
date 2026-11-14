@@ -43,9 +43,9 @@ export default function AwardWinningSection() {
   }, [modalMode]);
 
   return (
-    <section className="py-14 sm:py-20 lg:py-24 bg-[#EDF4FB]/85 border-y border-[#337AB7]/15">
+    <section className="py-14 sm:py-20 lg:py-24 bg-[#EDF4FB]/90 border-y border-[#337AB7]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Heading matching reference layout */}
+        {/* Top Heading */}
         <h2 className="text-2xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight text-[#0C2544] leading-[1.2] mb-8 sm:mb-12">
           Welcome to an{' '}
           <span className="text-[#337AB7]">Award Winning</span>
@@ -56,7 +56,7 @@ export default function AwardWinningSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-7 lg:gap-8 items-stretch">
           {/* Column 1 */}
           <div className="lg:col-span-3 flex flex-col justify-center">
-            <p className="text-sm sm:text-[15px] leading-7 text-slate-600">
+            <p className="text-sm sm:text-[15px] leading-7 text-slate-700">
               Based in Gurgaon with a PAN-India and overseas footprint, IBA partners with
               Multinational Corporations, Blue-Chip Enterprises, Large Corporate Houses,
               and Family-Owned Businesses to turn manpower into a decisive competitive edge
@@ -66,7 +66,7 @@ export default function AwardWinningSection() {
 
           {/* Column 2 */}
           <div className="lg:col-span-3 flex flex-col justify-center">
-            <p className="text-sm sm:text-[15px] leading-7 text-slate-600">
+            <p className="text-sm sm:text-[15px] leading-7 text-slate-700">
               Whether placing C-Suite leaders (MD, CEO, CFO, CHRO, CMO, CIO/CTO),
               transforming HR structures, or empowering professionals through AVY Kochhar
               Academy, we align leadership vision with focused execution at every level.
@@ -80,7 +80,7 @@ export default function AwardWinningSection() {
                 key={card.id}
                 type="button"
                 onClick={() => openModal(card.id)}
-                className="group relative aspect-[16/10] sm:aspect-square w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-100 text-left shadow-sm hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#337AB7]"
+                className="group relative aspect-[16/10] sm:aspect-square w-full overflow-hidden rounded-xl border border-[#337AB7]/25 bg-white text-left shadow-xs hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#337AB7]"
               >
                 <img
                   src={card.image}
@@ -88,12 +88,12 @@ export default function AwardWinningSection() {
                   loading="lazy"
                   className="h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
-                {/* Bottom #0C2544 -> #337AB7 bar */}
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-r from-[#0C2544]/95 to-[#337AB7]/95 group-hover:from-[#0C2544] group-hover:to-[#286090] px-5 py-4 flex items-center justify-between text-white transition-colors">
-                  <span className="text-sm sm:text-base font-semibold tracking-tight">
+                {/* Bottom Rich Navy -> Sapphire Bar with Champagne Gold Accent */}
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-r from-[#0C2544]/95 via-[#103259]/95 to-[#1E4D7E]/95 group-hover:from-[#0C2544] group-hover:to-[#163C6B] px-5 py-4 flex items-center justify-between text-white transition-colors border-t border-sky-400/25">
+                  <span className="text-sm sm:text-base font-semibold tracking-tight group-hover:text-sky-200 transition-colors">
                     {card.title}
                   </span>
-                  <ChevronRight className="w-5 h-5 shrink-0 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-5 h-5 shrink-0 text-[#C5A16D] group-hover:translate-x-1 transition-transform" />
                 </div>
               </button>
             ))}
@@ -104,7 +104,7 @@ export default function AwardWinningSection() {
       {/* Interactive Modal for Profile / CV Upload */}
       {modalMode && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-xs p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#0C2544]/60 backdrop-blur-xs p-4"
           role="dialog"
           aria-modal="true"
         >
@@ -113,7 +113,7 @@ export default function AwardWinningSection() {
               type="button"
               onClick={closeModal}
               aria-label="Close modal"
-              className="absolute right-4 top-4 rounded-lg p-1.5 text-slate-400 hover:bg-slate-100 hover:text-slate-700 transition-colors"
+              className="absolute right-4 top-4 rounded-lg p-1.5 text-slate-400 hover:bg-[#EDF4FB] hover:text-[#0C2544] transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
@@ -123,7 +123,7 @@ export default function AwardWinningSection() {
                 <div className="mx-auto w-14 h-14 rounded-full bg-[#EDF4FB] text-[#337AB7] flex items-center justify-center">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900">
+                <h3 className="text-xl font-bold text-[#0C2544]">
                   {modalMode === 'cv'
                     ? 'CV Received Successfully'
                     : 'Candidate Profile Created'}
@@ -135,7 +135,7 @@ export default function AwardWinningSection() {
                 <button
                   type="button"
                   onClick={closeModal}
-                  className="rounded-xl bg-[#337AB7] px-6 py-2.5 text-sm font-semibold text-white hover:bg-[#286090] transition-colors"
+                  className="rounded-xl bg-[#337AB7] hover:bg-[#286090] px-6 py-2.5 text-sm font-bold text-white transition-colors"
                 >
                   Done
                 </button>
@@ -157,7 +157,7 @@ export default function AwardWinningSection() {
                     )}
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-slate-900">
+                    <h3 className="text-lg font-bold text-[#0C2544]">
                       {modalMode === 'cv' ? 'Upload Your CV' : 'Create Your Candidate Profile'}
                     </h3>
                     <p className="text-xs text-slate-500">
@@ -171,13 +171,13 @@ export default function AwardWinningSection() {
                     type="text"
                     required
                     placeholder="Full Name"
-                    className="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:border-[#337AB7] focus:outline-none focus:ring-2 focus:ring-[#337AB7]/20"
+                    className="w-full rounded-xl border border-slate-300 bg-slate-50 px-3.5 py-2.5 text-sm text-[#0C2544] focus:bg-white focus:border-[#337AB7] focus:outline-none focus:ring-2 focus:ring-[#337AB7]/20"
                   />
                   <input
                     type="email"
                     required
                     placeholder="Email Address"
-                    className="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:border-[#337AB7] focus:outline-none focus:ring-2 focus:ring-[#337AB7]/20"
+                    className="w-full rounded-xl border border-slate-300 bg-slate-50 px-3.5 py-2.5 text-sm text-[#0C2544] focus:bg-white focus:border-[#337AB7] focus:outline-none focus:ring-2 focus:ring-[#337AB7]/20"
                   />
                 </div>
 
@@ -185,13 +185,13 @@ export default function AwardWinningSection() {
                   type="text"
                   required
                   placeholder="Current Role & Industry (e.g. Sales Head • BFSI)"
-                  className="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:border-[#337AB7] focus:outline-none focus:ring-2 focus:ring-[#337AB7]/20"
+                  className="w-full rounded-xl border border-slate-300 bg-slate-50 px-3.5 py-2.5 text-sm text-[#0C2544] focus:bg-white focus:border-[#337AB7] focus:outline-none focus:ring-2 focus:ring-[#337AB7]/20"
                 />
 
                 {modalMode === 'cv' ? (
-                  <label className="flex flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 px-4 py-6 text-center cursor-pointer hover:border-[#337AB7] hover:bg-[#EDF4FB]/50 transition-colors">
+                  <label className="flex flex-col items-center justify-center rounded-xl border-2 border-dashed border-[#337AB7]/40 bg-[#EDF4FB]/50 px-4 py-6 text-center cursor-pointer hover:border-[#337AB7] hover:bg-[#EDF4FB] transition-colors">
                     <UploadCloud className="w-7 h-7 text-[#337AB7] mb-2" />
-                    <span className="text-sm font-semibold text-slate-800">
+                    <span className="text-sm font-semibold text-[#0C2544]">
                       {fileName || 'Click to select PDF or DOCX resume'}
                     </span>
                     <span className="text-xs text-slate-500 mt-1">Max file size 5MB</span>
@@ -208,13 +208,13 @@ export default function AwardWinningSection() {
                     rows={3}
                     required
                     placeholder="Key skills, years of experience & preferred locations..."
-                    className="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:border-[#337AB7] focus:outline-none focus:ring-2 focus:ring-[#337AB7]/20"
+                    className="w-full rounded-xl border border-slate-300 bg-slate-50 px-3.5 py-2.5 text-sm text-[#0C2544] focus:bg-white focus:border-[#337AB7] focus:outline-none focus:ring-2 focus:ring-[#337AB7]/20"
                   />
                 )}
 
                 <button
                   type="submit"
-                  className="w-full rounded-xl bg-[#337AB7] py-3 text-sm font-bold text-white hover:bg-[#286090] transition-colors"
+                  className="w-full rounded-xl bg-[#337AB7] hover:bg-[#286090] py-3 text-sm font-bold text-white transition-colors cursor-pointer"
                 >
                   {modalMode === 'cv' ? 'Submit CV' : 'Save Profile'}
                 </button>
@@ -226,4 +226,3 @@ export default function AwardWinningSection() {
     </section>
   );
 }
-

@@ -15,23 +15,23 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md border-b border-slate-200 ${
-        scrolled ? 'shadow-md shadow-slate-900/5' : ''
+      className={`sticky top-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md border-b border-[#EAE6DC] ${
+        scrolled ? 'shadow-md shadow-black/5' : ''
       }`}
     >
-      {/* Top Corporate #0C2544 Strip (Secondary Nav + Location) */}
-      <div className="hidden lg:block bg-[#0C2544] text-white text-xs">
+      {/* Top Black / Deep Navy Strip (Secondary Nav + Contact) */}
+      <div className="hidden lg:block bg-[#0A0F14] text-white text-xs border-b border-[#283A46]/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-5 text-white/90">
+          <div className="flex items-center gap-5 text-slate-300">
             <span className="inline-flex items-center gap-1.5 font-medium">
-              <Globe2 className="w-3.5 h-3.5 text-white" />
+              <Globe2 className="w-3.5 h-3.5 text-[#C5A16D]" />
               Gurgaon HQ • PAN-India &amp; Global Advisory
             </span>
             <a
               href="mailto:info@ibaconsultingworldwide.com"
-              className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
+              className="inline-flex items-center gap-1.5 hover:text-[#C5A16D] transition-colors"
             >
-              <Mail className="w-3.5 h-3.5" />
+              <Mail className="w-3.5 h-3.5 text-[#C5A16D]" />
               info@ibaconsultingworldwide.com
             </a>
           </div>
@@ -41,12 +41,12 @@ export default function Navbar() {
               <div key={link.label} className="inline-flex items-center gap-4">
                 <a
                   href={link.href}
-                  className="font-medium text-white/90 hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap"
+                  className="font-medium text-slate-300 hover:text-[#C5A16D] transition-colors whitespace-nowrap"
                 >
                   {link.label}
                 </a>
                 {idx < TOP_BAR_LINKS.length - 1 && (
-                  <span className="text-white/35 select-none">|</span>
+                  <span className="text-[#283A46] select-none">|</span>
                 )}
               </div>
             ))}
@@ -76,20 +76,20 @@ export default function Navbar() {
                 <div key={item.label} className="relative group">
                   <a
                     href={item.href}
-                    className="inline-flex items-center gap-1 py-2 text-[13px] xl:text-sm font-semibold text-slate-700 hover:text-[#337AB7] transition-colors whitespace-nowrap"
+                    className="inline-flex items-center gap-1 py-2 text-[13px] xl:text-sm font-semibold text-[#122A3E] hover:text-[#C5A16D] transition-colors whitespace-nowrap"
                   >
                     <span>{item.label}</span>
-                    <ChevronDown className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#337AB7] group-hover:rotate-180 transition-transform duration-200" />
+                    <ChevronDown className="w-3.5 h-3.5 text-[#283A46] group-hover:text-[#C5A16D] group-hover:rotate-180 transition-transform duration-200" />
                   </a>
 
                   {/* Dropdown Menu */}
-                  <div className="invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 absolute left-0 top-full pt-2 w-60 z-50">
-                    <div className="rounded-xl border border-slate-200 bg-white p-1.5 shadow-xl shadow-slate-900/10">
+                  <div className="invisible opacity-0 translate-y-1 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 absolute left-0 top-full pt-2 w-64 z-50">
+                    <div className="rounded-xl border border-[#EAE6DC] bg-white p-2 shadow-xl shadow-black/10">
                       {item.children.map((sub) => (
                         <a
                           key={sub.label}
                           href={sub.href}
-                          className="block rounded-lg px-3.5 py-2.5 text-xs sm:text-[13px] font-medium text-slate-700 hover:bg-[#EDF4FB] hover:text-[#337AB7] transition-colors"
+                          className="block rounded-lg px-3.5 py-2.5 text-xs sm:text-[13px] font-medium text-[#122A3E] hover:bg-[#F5F3EE] hover:text-[#C5A16D] transition-colors"
                         >
                           {sub.label}
                         </a>
@@ -101,7 +101,7 @@ export default function Navbar() {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="relative py-2 text-[13px] xl:text-sm font-semibold text-slate-700 hover:text-[#337AB7] transition-colors whitespace-nowrap after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:scale-x-0 hover:after:scale-x-100 after:bg-[#337AB7] after:transition-transform after:origin-left"
+                  className="relative py-2 text-[13px] xl:text-sm font-semibold text-[#122A3E] hover:text-[#C5A16D] transition-colors whitespace-nowrap after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:scale-x-0 hover:after:scale-x-100 after:bg-[#C5A16D] after:transition-transform after:origin-left"
                 >
                   {item.label}
                 </a>
@@ -113,10 +113,10 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center shrink-0">
             <a
               href="#contact"
-              className="inline-flex items-center gap-1.5 rounded-lg bg-[#337AB7] px-4 py-2 text-xs xl:text-sm font-semibold text-white shadow-sm shadow-[#337AB7]/25 hover:bg-[#286090] active:scale-[0.98] transition-all whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-[#C5A16D] hover:bg-[#A9844F] text-[#0A0F14] px-4 py-2 text-xs xl:text-sm font-bold shadow-md shadow-[#C5A16D]/20 active:scale-[0.98] transition-all whitespace-nowrap"
             >
               Get In Touch
-              <ArrowUpRight className="w-4 h-4" />
+              <ArrowUpRight className="w-4 h-4 text-[#0A0F14]" />
             </a>
           </div>
 
@@ -124,7 +124,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMobileOpen((prev) => !prev)}
-            className="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors"
+            className="lg:hidden p-2 rounded-lg text-[#122A3E] hover:bg-[#F5F3EE] transition-colors"
             aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={mobileOpen}
           >
@@ -133,26 +133,27 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile & Tablet Drawer (All Links Organized Cleanly) */}
+      {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-slate-200 bg-white text-slate-800 px-4 py-4 max-h-[calc(100dvh-4rem)] overflow-y-auto shadow-xl">
-          <div className="mb-3 rounded-xl bg-[#0C2544] text-white px-3.5 py-2.5 flex flex-col gap-1 text-xs">
-            <span className="inline-flex items-center gap-1.5 font-semibold text-sky-200">
+        <div className="lg:hidden border-t border-[#EAE6DC] bg-white text-[#122A3E] px-4 py-4 max-h-[calc(100dvh-4rem)] overflow-y-auto shadow-xl">
+          <div className="mb-3 rounded-xl bg-[#0A0F14] text-white px-3.5 py-2.5 flex flex-col gap-1 text-xs">
+            <span className="inline-flex items-center gap-1.5 font-semibold text-[#C5A16D]">
               <Globe2 className="w-3.5 h-3.5 shrink-0" />
               Gurgaon HQ • PAN-India &amp; Global Advisory
             </span>
             <a
               href="mailto:info@ibaconsultingworldwide.com"
-              className="inline-flex items-center gap-1.5 text-white/90 hover:text-white break-all"
+              className="inline-flex items-center gap-1.5 text-slate-300 hover:text-[#C5A16D] break-all"
             >
-              <Mail className="w-3.5 h-3.5 shrink-0" />
+              <Mail className="w-3.5 h-3.5 shrink-0 text-[#C5A16D]" />
               info@ibaconsultingworldwide.com
             </a>
           </div>
+
           <div className="space-y-1">
             {NAV_LINKS.map((item) =>
               item.children ? (
-                <div key={item.label} className="rounded-lg border border-slate-100">
+                <div key={item.label} className="rounded-lg border border-[#EAE6DC]">
                   <button
                     type="button"
                     onClick={() =>
@@ -160,23 +161,23 @@ export default function Navbar() {
                         prev === item.label ? null : item.label
                       )
                     }
-                    className="w-full flex items-center justify-between px-3 py-2.5 text-sm font-semibold text-slate-800 hover:text-[#337AB7]"
+                    className="w-full flex items-center justify-between px-3.5 py-2.5 text-sm font-semibold text-[#122A3E] hover:bg-[#F5F3EE] transition-colors"
                   >
                     <span>{item.label}</span>
                     <ChevronDown
-                      className={`w-4 h-4 transition-transform ${
-                        openMobileGroup === item.label ? 'rotate-180 text-[#337AB7]' : ''
+                      className={`w-4 h-4 text-[#283A46] transition-transform ${
+                        openMobileGroup === item.label ? 'rotate-180' : ''
                       }`}
                     />
                   </button>
                   {openMobileGroup === item.label && (
-                    <div className="bg-slate-50 px-3 pb-2.5 pt-1 space-y-1">
+                    <div className="border-t border-[#EAE6DC] bg-[#F5F3EE] p-2 space-y-1">
                       {item.children.map((sub) => (
                         <a
                           key={sub.label}
                           href={sub.href}
                           onClick={() => setMobileOpen(false)}
-                          className="block rounded-md px-2.5 py-1.5 text-xs font-medium text-slate-600 hover:bg-[#EDF4FB] hover:text-[#337AB7]"
+                          className="block rounded-md px-3 py-2 text-xs font-medium text-[#283A46] hover:bg-white hover:text-[#C5A16D] transition-colors"
                         >
                           {sub.label}
                         </a>
@@ -189,7 +190,7 @@ export default function Navbar() {
                   key={item.label}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-800 hover:bg-[#EDF4FB] hover:text-[#337AB7] transition-colors"
+                  className="block rounded-lg px-3.5 py-2.5 text-sm font-semibold text-[#122A3E] hover:bg-[#F5F3EE] hover:text-[#C5A16D] transition-colors"
                 >
                   {item.label}
                 </a>
@@ -197,33 +198,14 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* Secondary Quick Links in Mobile Drawer */}
-          <div className="mt-4 pt-3 border-t border-slate-200">
-            <p className="px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">
-              More From IBA
-            </p>
-            <div className="grid grid-cols-2 gap-1.5">
-              {TOP_BAR_LINKS.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="rounded-lg bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-[#EDF4FB] hover:text-[#337AB7]"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-4 pt-3 border-t border-slate-200">
+          <div className="mt-4 pt-4 border-t border-[#EAE6DC]">
             <a
               href="#contact"
               onClick={() => setMobileOpen(false)}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[#337AB7] px-4 py-3 text-sm font-semibold text-white hover:bg-[#286090] transition-colors"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#C5A16D] hover:bg-[#A9844F] text-[#0A0F14] py-3 text-sm font-bold shadow-md shadow-[#C5A16D]/20 transition-all"
             >
               Get In Touch
-              <ArrowUpRight className="w-4 h-4" />
+              <ArrowUpRight className="w-4 h-4 text-[#0A0F14]" />
             </a>
           </div>
         </div>
